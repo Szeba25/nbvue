@@ -12,6 +12,9 @@
             <router-link to="/">
                 <div class="nav nav1"></div>
             </router-link>
+            <router-link to="/stories">
+                <div class="nav nav2"></div>
+            </router-link>
         </div>
 
         <router-view></router-view>
