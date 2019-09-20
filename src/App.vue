@@ -7,12 +7,21 @@
         <div class="top-content">
             <img src="@/assets/design/topcontent.jpg">
         </div>
+
+        <div class="left-menu">
+            <router-link to="/">
+                <div class="nav nav1"></div>
+            </router-link>
+        </div>
+
+        <router-view></router-view>
+        <router-view name="side"></router-view>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'app'
+    name: 'App'
 }
 </script>
 
