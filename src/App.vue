@@ -10,10 +10,10 @@
 
         <div class="left-menu">
             <router-link to="/">
-                <div class="nav nav1"></div>
+                <p class="nav">Főoldal</p>
             </router-link>
             <router-link to="/stories">
-                <div class="nav nav2"></div>
+                <p class="nav">Történetek</p>
             </router-link>
         </div>
 
@@ -39,8 +39,9 @@ body:after {
     display: none;
 
     /* Preloading hover images with CSS */
-    content: url("assets/design/1_2.png") 
-             url("assets/design/2_2.png");
+    content: url("assets/design/highlights/draw_2.jpg")
+             url("assets/design/highlights/nb_2.jpg")
+             url("assets/design/highlights/str_2.jpg");
 }
 
 .main-layout {
@@ -67,27 +68,14 @@ body:after {
 }
 
 .nav {
-    width: 150px;
-    height: 50px;
-}
-
-.nav1 {
-    background-image: url("assets/design/1_1.png");
+    color: #2e1808;
+    font-size: 28px;
+    font-weight: bold;
     transition: 0.3s;
 }
 
-.nav1:hover {
-    background-image: url("assets/design/1_2.png");
-    transition: 0.3s;
-}
-
-.nav2 {
-    background-image: url("assets/design/2_1.png");
-    transition: 0.3s;
-}
-
-.nav2:hover {
-    background-image: url("assets/design/2_2.png");
+.nav:hover {
+    color: #884332;
     transition: 0.3s;
 }
 
@@ -97,7 +85,7 @@ body:after {
     color: black;
     background-color: rgb(255, 221, 205);
     text-align: center;
-    padding: 30px 0px 40px 5px;
+    padding: 30px 20px 40px 0px;
     background: url("assets/design/leftdecor.png") right top no-repeat, 
                 url("assets/design/footerleft.png") left bottom no-repeat, 
                 url("assets/design/bkgleft.jpg") left top repeat;
@@ -117,7 +105,7 @@ body:after {
     background: url("assets/design/rightdecor.png") left top no-repeat, 
                 url("assets/design/footerright.png") left bottom no-repeat, 
                 url("assets/design/bkgright.jpg") left top repeat;
-    padding: 20px 0px 40px 0px;
+    padding: 20px 20px 40px 20px;
     position: relative
 }
 
@@ -152,6 +140,11 @@ p {
 
 a {
     color: inherit;
+    text-decoration: none;
+}
+
+.bold {
+    font-weight: bold;
 }
 
 .centered {
