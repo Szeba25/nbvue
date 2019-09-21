@@ -1,0 +1,111 @@
+<template>
+    <div class="content">
+        <div class="highlights-title centered">
+            <h2>Kiemelt tartalmak</h2>
+        </div>
+        <div class="highlights">
+            <div class="highlight-item highlight-item1"><div class="highlight-item-fadein centered">Rajzok</div></div>
+            <div class="highlight-item highlight-item2"><div class="highlight-item-fadein centered">Játékok</div></div>
+            <div class="highlight-item highlight-item3"><div class="highlight-item-fadein centered">Történetek</div></div>
+        </div>
+        <div class="updates-title centered">
+            <h2>Friss tartalmak</h2>
+        </div>
+    </div>
+</template>
+
+<script>
+export default {
+    
+}
+</script>
+
+<style scoped>
+.content {
+    min-height: 600px;
+
+    /* Define a two-row grid for content */
+    display: grid;
+    grid-template-rows: min-content 200px min-content auto;
+    grid-gap: 0px;
+    padding: 0px;
+}
+
+.highlights-title {
+    padding: 15px 0px 15px 0px;
+}
+
+.highlights {
+    margin: 0px auto;
+
+    /* Define a three-column grid for content */
+    display: grid;
+    grid-template-columns: 220px 220px 220px;
+    grid-gap: 0px;
+    padding: 0px;
+}
+
+.highlight-item {
+    width: 200px;
+    height: 200px;
+    margin: 0px 10px;
+    transition: 0.3s;
+    background-size: cover;
+
+    border-style: solid;
+    border-color: #2e1808;
+    border-width: 1px;
+    border-radius: 15px;
+}
+
+.highlight-item1 {
+    background-image: url("../assets/design/highlights/Drawings_1.png");
+}
+
+.highlight-item1:hover {
+    background-image: url("../assets/design/highlights/Drawings_2.png");
+}
+
+.highlight-item2 {
+    background-image: url("../assets/design/highlights/Games_1.png");
+}
+
+.highlight-item2:hover {
+    background-image: url("../assets/design/highlights/Games_2.png");
+}
+
+.highlight-item3 {
+    background-image: url("../assets/design/highlights/Stories_1.png");
+}
+
+.highlight-item3:hover {
+    background-image: url("../assets/design/highlights/Stories_2.png");
+}
+
+.highlight-item-fadein {
+    font-family: "Monotype Corsiva";
+    font-size: 20px;
+    color: #2e1808;
+
+    background-color: #f1d7c698;
+    border-style: solid;
+    border-color: #2e1808;
+    border-width: 0.5px;
+    border-radius: 6px;
+
+    opacity: 0;
+    margin: 180px 40px 0px 40px;
+    transition: opacity 0.3s ease-in,
+                margin 0.3s;
+    overflow: hidden;
+}
+
+.highlight-item:hover .highlight-item-fadein {
+    opacity: 1;
+    margin: 170px 20px 0px 20px;
+}
+
+.updates-title {
+    padding: 15px 0px 0px 0px;
+}
+</style>>
