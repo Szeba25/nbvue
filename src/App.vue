@@ -1,21 +1,21 @@
 <template>
     <div class="main-layout">
         <div class="logo">
-            <h1 class="logo-text">Never Been</h1>
+            <router-link to="/"><h1 class="logo-text">Never Been</h1></router-link>
         </div>
         <div>
             <hr>
             <div class="menu-content">
-                <p class="menu-point">Rajzok</p>
-                <p class="menu-point">Kreatív</p>
-                <p class="menu-point">Játékok</p>
-                <p class="menu-point">Történetek</p>
-                <p class="menu-point">Receptek</p>
-                <p class="menu-point">Vendégkönyv</p>
+                <router-link to="/drawings"><p class="menu-point">Rajzok</p></router-link>
+                <router-link to="/creative"><p class="menu-point">Kreatív</p></router-link>
+                <router-link to="/games"><p class="menu-point">Játékok</p></router-link>
+                <router-link to="/stories"><p class="menu-point">Történetek</p></router-link>
+                <router-link to="/recipes"><p class="menu-point">Receptek</p></router-link>
+                <router-link to="/guestbook"><p class="menu-point">Vendégkönyv</p></router-link>
             </div>
             <hr>
         </div>
-        <router-view></router-view>
+        <router-view class="content"></router-view>
     </div>
 </template>
 
@@ -65,6 +65,14 @@ hr {
     box-shadow: 0px 0px 5px 1px #35261a57;
 }
 
+a {
+    text-decoration: none;
+}
+
+.content {
+    min-height: 600px;
+}
+
 .centered {
     text-align: center;
 }
@@ -73,7 +81,7 @@ hr {
 <style scoped>
 .main-layout {
     display: grid;
-    grid-template-rows: 80px auto auto;
+    grid-template-rows: 100px auto auto;
     grid-gap: 0px;
     padding: 0px;
     margin: 20px;
@@ -88,6 +96,7 @@ hr {
     display: table;
     height: 80px;
     overflow: hidden;
+    padding: 20px 0px 0px 0px;
     margin: auto;
 }
 

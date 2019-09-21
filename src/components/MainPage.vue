@@ -1,12 +1,18 @@
 <template>
-    <div class="content">
+    <div class="mainpage-content">
         <div class="highlights-title centered">
             <h2>Kiemelt tartalmak</h2>
         </div>
         <div class="highlights">
-            <div class="highlight-item highlight-item1"><div class="highlight-item-fadein centered">Rajzok</div></div>
-            <div class="highlight-item highlight-item2"><div class="highlight-item-fadein centered">Játékok</div></div>
-            <div class="highlight-item highlight-item3"><div class="highlight-item-fadein centered">Történetek</div></div>
+            <router-link to="drawings">
+                <div class="highlight-item highlight-item1"><div class="highlight-item-fadein centered">Rajzok</div></div>
+            </router-link>
+            <router-link to="games">
+                <div class="highlight-item highlight-item2"><div class="highlight-item-fadein centered">Játékok</div></div>
+            </router-link>
+            <router-link to="stories">
+                <div class="highlight-item highlight-item3"><div class="highlight-item-fadein centered">Történetek</div></div>
+            </router-link>
         </div>
         <div class="updates-title centered">
             <h2>Friss tartalmak</h2>
@@ -16,15 +22,13 @@
 
 <script>
 export default {
-    
+    name: 'MainPage'
 }
 </script>
 
 <style scoped>
-.content {
-    min-height: 600px;
-
-    /* Define a two-row grid for content */
+.mainpage-content {
+    /* Define a two-row grid */
     display: grid;
     grid-template-rows: min-content 200px min-content auto;
     grid-gap: 0px;
