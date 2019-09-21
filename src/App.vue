@@ -1,134 +1,114 @@
 <template>
     <div class="main-layout">
-        <div class="top-banner">
-            <img src="@/assets/design/banner.jpg">
+        <div class="logo">
+            <h1 class="logo-text">Never Been</h1>
         </div>
-
-        <div class="top-content">
-            <img src="@/assets/design/topcontent.jpg">
+        <div class="menu">
+            <hr>
+            <div class="menu-content">
+                <p class="menu-point">Rajzok</p>
+                <p class="menu-point">Kreatív</p>
+                <p class="menu-point">Történetek</p>
+                <p class="menu-point">Játékok</p>
+                <p class="menu-point">Receptek</p>
+                <p class="menu-point">Vendégkönyv</p>
+            </div>
+            <hr>
         </div>
-
-        <div class="left-menu">
-            <router-link to="/">
-                <p class="nav">Főoldal</p>
-            </router-link>
-            <router-link to="/stories">
-                <p class="nav">Történetek</p>
-            </router-link>
+        <div class="content">
+            
         </div>
-
-        <router-view></router-view>
-        <router-view name="side"></router-view>
     </div>
 </template>
 
 <script>
 export default {
     name: 'App'
-}
+};
 </script>
 
 <style>
 body {
     margin: auto;
     max-width: 980px;
-    background-color: black;
+    /* background-color: #d3b58f; */
+    background-color: #f1d7c6;
 }
 
 body:after {
     display: none;
 
     /* Preloading hover images with CSS */
-    content: url("assets/design/highlights/draw_2.jpg")
-             url("assets/design/highlights/nb_2.jpg")
-             url("assets/design/highlights/str_2.jpg");
+    /* content: url("assets/design/something.jpg"); */
 }
 
 .main-layout {
     display: grid;
-    grid-template-columns: 180px 620px 180px;
+    grid-template-rows: 80px auto auto;
     grid-gap: 0px;
     padding: 0px;
+    margin: 20px;
+    background-color: #f7eee4;
+
+    /* Some effects for the main layout */
+    border-radius: 10px;
+    box-shadow: 0px 0px 25px 5px #35261a93;
 }
 
-.top-banner {
-    background-color: black;
-    grid-column-start: 1;
-    grid-column-end: 4;
+.logo {
+    grid-row-start: 1;
+    grid-row-end: 1;
+    display: table;
+    height: 80px;
+    overflow: hidden;
+    margin: auto;
+}
+
+.logo-text {
+    display: table-cell;
+    vertical-align: middle;
     text-align: center;
+    font-size: 52px;
 }
 
-.top-content {
-    background-color: black;
-    grid-column-start: 1;
-    grid-column-end: 4;
+.menu {
+    grid-row-start: 2;
+    grid-row-end: 2;
+}
+
+.menu-content {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    grid-gap: 0px;
+    padding: 0px;
     text-align: center;
-    line-height: 0px;
-    padding: 15px 0px 0px 0px;
+    margin: 0px 120px;
 }
 
-.nav {
-    color: #2e1808;
-    font-size: 28px;
-    font-weight: bold;
+.menu-point {
+    font-size: 22px;
+    margin: 6px;
     transition: 0.3s;
+    transition-timing-function: ease;
 }
 
-.nav:hover {
-    color: #884332;
+.menu-point:hover {
+    font-size: 24px;
+    color: #d48545;
     transition: 0.3s;
-}
-
-.left-menu {
-    font-size: 18px;
-    min-height: 600px;
-    color: black;
-    background-color: rgb(255, 221, 205);
-    text-align: center;
-    padding: 30px 20px 40px 0px;
-    background: url("assets/design/leftdecor.png") right top no-repeat, 
-                url("assets/design/footerleft.png") left bottom no-repeat, 
-                url("assets/design/bkgleft.jpg") left top repeat;
+    transition-timing-function: ease;
 }
 
 .content {
+    grid-row-start: 3;
+    grid-row-end: 3;
     min-height: 600px;
-    background-color: rgb(205, 228, 255);
-    background: url("assets/design/footercenter.png") left bottom no-repeat, 
-                url("assets/design/bkgcenter.jpg") left top repeat;
-    padding: 0px 50px 40px 50px;
-}
-
-.right-menu {
-    min-height: 600px;
-    background-color: rgb(233, 255, 205);
-    background: url("assets/design/rightdecor.png") left top no-repeat, 
-                url("assets/design/footerright.png") left bottom no-repeat, 
-                url("assets/design/bkgright.jpg") left top repeat;
-    padding: 20px 20px 40px 20px;
-    position: relative
-}
-
-.design-by {
-    font-style: italic;
-    margin: 0px;
-    padding: 0px;
-    position: absolute;
-    bottom: 25px;
-    right: 35px;
 }
 
 h1 {
-    font-family: Vivaldi;
+    font-family: "Old English Text MT";
     color: #2e1808;
-    font-size: 36px;
-}
-
-h3 {
-    font-family: "Monotype Corsiva";
-    font-weight: bold;
-    color: #2e1808;
-    font-size: 22px;
+    font-size: 40px;
 }
 
 p {
@@ -138,16 +118,10 @@ p {
     line-height: 22px;
 }
 
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-.bold {
-    font-weight: bold;
-}
-
-.centered {
-    text-align: center;
+hr {
+    margin: 2px 20px 2px 20px;
+    border-color: #2e1808;
+    border-width: 0.5px;
+    box-shadow: 0px 0px 5px 1px #35261a57;
 }
 </style>
