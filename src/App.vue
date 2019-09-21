@@ -20,8 +20,15 @@
                 <h2>Kiemelt tartalmak</h2>
             </div>
             <div class="highlights">
-                <div class="highlight-item highlight-item1"></div>
-                <div class="highlight-item highlight-item2"></div>
+                <div class="test-appear-parent">
+                    <div class="test-appear centered">Rajzok</div>
+                    <div class="highlight-item highlight-item1"></div>
+                </div>
+                
+                <div class="highlight-item highlight-item2">
+                    <div class="test-fadein centered">Never Been</div>
+                </div>
+                
                 <div class="highlight-item highlight-item3"></div>
             </div>
             <div class="updates-title centered">
@@ -48,9 +55,9 @@ body:after {
     display: none;
 
     /* Preloading hover images with CSS */
-    content: url("assets/design/highlights/draw_2.png")
-             url("assets/design/highlights/nb_2.png")
-             url("assets/design/highlights/st_2.png");
+    content: url("assets/design/highlights/Drawing_2.png")
+             url("assets/design/highlights/Games_2.png")
+             url("assets/design/highlights/Stories_2.png");
 }
 
 h1 {
@@ -144,7 +151,7 @@ hr {
 
     /* Define a two-row grid for content */
     display: grid;
-    grid-template-rows: min-content 200px min-content auto;
+    grid-template-rows: min-content 220px min-content auto;
     grid-gap: 0px;
     padding: 0px;
 }
@@ -172,27 +179,63 @@ hr {
 }
 
 .highlight-item1 {
-    background-image: url("assets/design/highlights/draw_1.png");
+    background-image: url("assets/design/highlights/Drawing_1.png");
 }
 
 .highlight-item1:hover {
-    background-image: url("assets/design/highlights/draw_2.png");
+    background-image: url("assets/design/highlights/Drawing_2.png");
+}
+
+.test-appear-parent {
+    height: 220px;
+}
+
+.test-appear {
+    opacity: 0;
+    transition: opacity 0.3s ease-in,
+                height 0.3s;
+    height: 0px;
+    overflow: hidden;
+}
+
+.test-appear-parent:hover .test-appear {
+    opacity: 1;
+    height: 20px;
 }
 
 .highlight-item2 {
-    background-image: url("assets/design/highlights/nb_1.png");
+    background-image: url("assets/design/highlights/Games_1.png");
 }
 
 .highlight-item2:hover {
-    background-image: url("assets/design/highlights/nb_2.png");
+    background-image: url("assets/design/highlights/Games_2.png");
+}
+
+.test-fadein {
+    background-color: #f1d7c698;
+    border-style: solid;
+    border-color: #2e1808;
+    border-width: 0.5px;
+    border-radius: 6px;
+
+    opacity: 0;
+    margin: 180px 40px 0px 40px;
+    transition: opacity 0.3s ease-in,
+                margin 0.3s;
+    overflow: hidden;
+}
+
+.highlight-item2:hover .test-fadein {
+    opacity: 1;
+    margin: 170px 20px 0px 20px;
 }
 
 .highlight-item3 {
-    background-image: url("assets/design/highlights/st_1.png");
+    background-image: url("assets/design/highlights/Stories_1.png");
 }
 
 .highlight-item3:hover {
-    background-image: url("assets/design/highlights/st_2.png");
+    background-image: url("assets/design/highlights/Stories_2.png");
 }
 
 .updates-title {
