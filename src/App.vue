@@ -3,7 +3,7 @@
         <div class="logo">
             <h1 class="logo-text">Never Been</h1>
         </div>
-        <div class="menu">
+        <div>
             <hr>
             <div class="menu-content">
                 <p class="menu-point">Rajzok</p>
@@ -16,7 +16,17 @@
             <hr>
         </div>
         <div class="content">
-            
+            <div class="highlights-title centered">
+                <h2>Kiemelt tartalmak</h2>
+            </div>
+            <div class="highlights">
+                <div class="highlight-item highlight-item1"></div>
+                <div class="highlight-item highlight-item2"></div>
+                <div class="highlight-item highlight-item3"></div>
+            </div>
+            <div class="updates-title centered">
+                <h2>Friss tartalmak</h2>
+            </div>
         </div>
     </div>
 </template>
@@ -31,7 +41,6 @@ export default {
 body {
     margin: auto;
     max-width: 980px;
-    /* background-color: #d3b58f; */
     background-color: #f1d7c6;
 }
 
@@ -44,6 +53,40 @@ body:after {
              url("assets/design/highlights/st_2.png");
 }
 
+h1 {
+    font-family: "Old English Text MT";
+    color: #2e1808;
+    font-size: 40px;
+}
+
+h2 {
+    font-family: "Monotype Corsiva";
+    color: #2e1808;
+    font-size: 30px;
+    margin: 5px 0px;
+}
+
+p {
+    font-family: "Monotype Corsiva";
+    color: #2e1808;
+    font-size: 16px;
+    line-height: 22px;
+    margin: 5px 0px;
+}
+
+hr {
+    margin: 2px 20px 2px 20px;
+    border-color: #2e1808;
+    border-width: 0.5px;
+    box-shadow: 0px 0px 5px 1px #35261a57;
+}
+
+.centered {
+    text-align: center;
+}
+</style>
+
+<style scoped>
 .main-layout {
     display: grid;
     grid-template-rows: 80px auto auto;
@@ -58,8 +101,6 @@ body:after {
 }
 
 .logo {
-    grid-row-start: 1;
-    grid-row-end: 1;
     display: table;
     height: 80px;
     overflow: hidden;
@@ -73,16 +114,13 @@ body:after {
     font-size: 52px;
 }
 
-.menu {
-    grid-row-start: 2;
-    grid-row-end: 2;
-}
-
 .menu-content {
+    /* Display menu elements in 6 columns */
     display: grid;
     grid-template-columns: auto auto auto auto auto auto;
     grid-gap: 0px;
     padding: 0px;
+
     text-align: center;
     margin: 0px 120px;
 }
@@ -102,28 +140,62 @@ body:after {
 }
 
 .content {
-    grid-row-start: 3;
-    grid-row-end: 3;
     min-height: 600px;
+
+    /* Define a two-row grid for content */
+    display: grid;
+    grid-template-rows: min-content 200px min-content auto;
+    grid-gap: 0px;
+    padding: 0px;
 }
 
-h1 {
-    font-family: "Old English Text MT";
-    color: #2e1808;
-    font-size: 40px;
+.highlights-title {
+    padding: 15px 0px 0px 0px;
 }
 
-p {
-    font-family: "Monotype Corsiva";
-    color: #2e1808;
-    font-size: 16px;
-    line-height: 22px;
+.highlights {
+    margin: 0px auto;
+
+    /* Define a three-column grid for content */
+    display: grid;
+    grid-template-columns: 220px 220px 220px;
+    grid-gap: 0px;
+    padding: 0px;
 }
 
-hr {
-    margin: 2px 20px 2px 20px;
-    border-color: #2e1808;
-    border-width: 0.5px;
-    box-shadow: 0px 0px 5px 1px #35261a57;
+.highlight-item {
+    width: 200px;
+    height: 200px;
+    margin: 0px 10px;
+    transition: 0.3s;
+    background-size: cover;
+}
+
+.highlight-item1 {
+    background-image: url("assets/design/highlights/draw_1.png");
+}
+
+.highlight-item1:hover {
+    background-image: url("assets/design/highlights/draw_2.png");
+}
+
+.highlight-item2 {
+    background-image: url("assets/design/highlights/nb_1.png");
+}
+
+.highlight-item2:hover {
+    background-image: url("assets/design/highlights/nb_2.png");
+}
+
+.highlight-item3 {
+    background-image: url("assets/design/highlights/st_1.png");
+}
+
+.highlight-item3:hover {
+    background-image: url("assets/design/highlights/st_2.png");
+}
+
+.updates-title {
+    padding: 15px 0px 0px 0px;
 }
 </style>
