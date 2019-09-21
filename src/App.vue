@@ -8,8 +8,8 @@
             <div class="menu-content">
                 <p class="menu-point">Rajzok</p>
                 <p class="menu-point">Kreatív</p>
-                <p class="menu-point">Történetek</p>
                 <p class="menu-point">Játékok</p>
+                <p class="menu-point">Történetek</p>
                 <p class="menu-point">Receptek</p>
                 <p class="menu-point">Vendégkönyv</p>
             </div>
@@ -20,9 +20,9 @@
                 <h2>Kiemelt tartalmak</h2>
             </div>
             <div class="highlights">
-                <div class="highlight-item highlight-item1"><div class="highlight-item-fadein centered">Drawings</div></div>
-                <div class="highlight-item highlight-item2"><div class="highlight-item-fadein centered">Games</div></div>
-                <div class="highlight-item highlight-item3"><div class="highlight-item-fadein centered">Stories</div></div>
+                <div class="highlight-item highlight-item1"><div class="highlight-item-fadein centered">Rajzok</div></div>
+                <div class="highlight-item highlight-item2"><div class="highlight-item-fadein centered">Játékok</div></div>
+                <div class="highlight-item highlight-item3"><div class="highlight-item-fadein centered">Történetek</div></div>
             </div>
             <div class="updates-title centered">
                 <h2>Friss tartalmak</h2>
@@ -40,7 +40,8 @@ export default {
 <style>
 body {
     margin: auto;
-    max-width: 980px;
+    max-width: 1000px;
+    min-width: 820px; /* Switch layout below this value */
     background-color: #f1d7c6;
 }
 
@@ -218,6 +219,10 @@ hr {
 }
 
 .highlight-item-fadein {
+    font-family: "Monotype Corsiva";
+    font-size: 20px;
+    color: #2e1808;
+
     background-color: #f1d7c698;
     border-style: solid;
     border-color: #2e1808;
