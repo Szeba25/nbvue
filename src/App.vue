@@ -39,7 +39,9 @@ body:after {
     display: none;
 
     /* Preloading hover images with CSS */
-    /* content: url("assets/design/something.jpg"); */
+    content: url("assets/design/highlights/draw_2.png")
+             url("assets/design/highlights/nb_2.png")
+             url("assets/design/highlights/st_2.png");
 }
 
 .main-layout {
