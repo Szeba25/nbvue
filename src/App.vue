@@ -150,7 +150,7 @@ hr {
 }
 
 .highlights-title {
-    padding: 15px 0px 0px 0px;
+    padding: 15px 0px 15px 0px;
 }
 
 .highlights {
@@ -169,6 +169,11 @@ hr {
     margin: 0px 10px;
     transition: 0.3s;
     background-size: cover;
+
+    border-style: solid;
+    border-color: #2e1808;
+    border-width: 1px;
+    border-radius: 15px;
 }
 
 .highlight-item1 {
