@@ -5,13 +5,13 @@
         </div>
         <div class="highlights">
             <router-link to="drawings">
-                <div class="highlight-item highlight-item1"><div class="highlight-item-fadein centered">Rajzok</div></div>
+                <div class="faded-icon highlight-item1"><div class="faded-icon-fadein centered">Rajzok</div></div>
             </router-link>
             <router-link to="games">
-                <div class="highlight-item highlight-item2"><div class="highlight-item-fadein centered">Játékok</div></div>
+                <div class="faded-icon highlight-item2"><div class="faded-icon-fadein centered">Játékok</div></div>
             </router-link>
             <router-link to="stories">
-                <div class="highlight-item highlight-item3"><div class="highlight-item-fadein centered">Történetek</div></div>
+                <div class="faded-icon highlight-item3"><div class="faded-icon-fadein centered">Történetek</div></div>
             </router-link>
         </div>
         <div class="main-separator">
@@ -81,29 +81,6 @@ export default {
     padding: 0px;
 }
 
-.highlight-item {
-    width: 200px;
-    height: 200px;
-    margin: 0px 10px;
-    transition: 0.3s;
-    background-size: cover;
-
-    border-style: solid;
-    border-color: #2e1808;
-    border-width: 1px;
-    border-radius: 15px;
-
-    filter: grayscale(75%);
-    opacity: 0.8;
-
-    box-shadow: 0px 0px 15px 3px #35261a93;
-}
-
-.highlight-item:hover {
-    filter: grayscale(0%);
-    opacity: 1;
-}
-
 .highlight-item1 {
     background-image: url("../assets/design/highlights/Drawings_1.png");
 }
@@ -114,29 +91,6 @@ export default {
 
 .highlight-item3 {
     background-image: url("../assets/design/highlights/Stories_1.png");
-}
-
-.highlight-item-fadein {
-    font-family: "Monotype Corsiva";
-    font-size: 20px;
-    color: #2e1808;
-
-    background-color: #f1d7c698;
-    border-style: solid;
-    border-color: #2e1808;
-    border-width: 0.5px;
-    border-radius: 6px;
-
-    opacity: 0;
-    margin: 180px 40px 0px 40px;
-    transition: opacity 0.3s ease-in,
-                margin 0.3s;
-    overflow: hidden;
-}
-
-.highlight-item:hover .highlight-item-fadein {
-    opacity: 1;
-    margin: 170px 20px 0px 20px;
 }
 
 .main-separator {

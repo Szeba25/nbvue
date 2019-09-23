@@ -76,6 +76,53 @@ a {
 .centered {
     text-align: center;
 }
+
+/* Faded icons */
+.faded-icon {
+    width: 200px;
+    height: 200px;
+    margin: 0px 10px;
+    transition: 0.3s;
+    background-size: cover;
+
+    border-style: solid;
+    border-color: #2e1808;
+    border-width: 1px;
+    border-radius: 15px;
+
+    filter: grayscale(75%);
+    opacity: 0.8;
+
+    box-shadow: 0px 0px 15px 3px #35261a93;
+}
+
+.faded-icon:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+.faded-icon-fadein {
+    font-family: "Monotype Corsiva";
+    font-size: 20px;
+    color: #2e1808;
+
+    background-color: #f1d7c698;
+    border-style: solid;
+    border-color: #2e1808;
+    border-width: 0.5px;
+    border-radius: 6px;
+
+    opacity: 0;
+    margin: 180px 40px 0px 40px;
+    transition: opacity 0.3s ease-in,
+                margin 0.3s;
+    overflow: hidden;
+}
+
+.faded-icon:hover .faded-icon-fadein {
+    opacity: 1;
+    margin: 170px 20px 0px 20px;
+}
 </style>
 
 <style scoped>
