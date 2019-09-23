@@ -17,12 +17,44 @@
         <div class="updates-title centered">
             <h2>Friss tartalmak</h2>
         </div>
+        <div class="updates">
+            <div v-for="(item, index) in updates" v-bind:key="item.id">
+                <div v-if="index % 2 == 0" class="updates-div">
+                    <router-link v-bind:to=item.link>
+                        <img class="updates-picture" v-bind:src=item.picture width=320px height=320px>
+                    </router-link>
+                    <div class="updates-description">{{item.description}}</div>
+                </div>
+                <div v-else class="updates-div">
+                    <div class="updates-description">{{item.description}}</div>
+                    <router-link v-bind:to=item.link>
+                        <img class="updates-picture" v-bind:src=item.picture width=320px height=320px>
+                    </router-link>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
+import Axios from 'axios';
+
 export default {
-    name: 'MainPage'
+    name: 'MainPage',
+
+    data() {
+        return {
+            updates: []
+        }
+    },
+
+    created() {
+        Axios.get('/main_page/data.json').then((response) => {
+            for (let i = 0; i < response.data.length; i++) {
+                this.updates.push(response.data[i]);
+            }
+        });
+    }
 }
 </script>
 
@@ -110,6 +142,29 @@ export default {
 }
 
 .updates-title {
-    padding: 15px 0px 0px 0px;
+    padding: 15px 0px 15px 0px;
+}
+
+.updates {
+    margin: 0px auto 30px auto;
+}
+
+.updates-div {
+    display: grid;
+    grid-template-columns: 320px 320px;
+    align-items: center;
+    text-align: center;
+}
+
+.updates-picture {
+    vertical-align: middle;
+}
+
+.updates-description {
+    width: 280px;
+    font-family: "Monotype Corsiva";
+    font-size: 24px;
+    color: #2e1808;
+    margin: 0px 20px;
 }
 </style>>
