@@ -63,7 +63,6 @@ export default {
 
 <style scoped>
 .mainpage-content {
-    /* Define a two-row grid */
     display: grid;
     grid-template-rows: min-content 200px min-content min-content auto;
     grid-gap: 0px;
@@ -76,8 +75,6 @@ export default {
 
 .highlights {
     margin: 0px auto;
-
-    /* Define a three-column grid for content */
     display: grid;
     grid-template-columns: 220px 220px 220px;
     grid-gap: 0px;

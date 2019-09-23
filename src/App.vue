@@ -87,7 +87,6 @@ a {
     margin: 20px;
     background-color: #f7eee4;
 
-    /* Some effects for the main layout */
     border-radius: 10px;
     box-shadow: 0px 0px 25px 5px #35261a93;
 }
@@ -108,7 +107,6 @@ a {
 }
 
 .menu-content {
-    /* Display menu elements in 6 columns */
     display: grid;
     grid-template-columns: auto auto auto auto auto auto;
     grid-gap: 0px;
