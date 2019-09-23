@@ -6,7 +6,78 @@
         </div>
 
         <modal v-if="showModal" @close="showModal = false">
-            <h3 slot="header">custom header</h3>
+            <div slot="body">
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+                <p>Content</p>
+            </div>
         </modal>
 
     </div>
