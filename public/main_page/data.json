@@ -1,37 +1,27 @@
 [
 	{
-		"picture": "main_page/1.png",
-		"description": "Some very very very very very very very long long long text for picture 1",
+		"picture": "main_page/Autumn_Leaf.JPG",
+		"description": "Őszi falevélkés rajzocska izébigyó",
 		"link": "drawings"
 	},
 	{
-		"picture": "main_page/2.png",
-		"description": "Some very very very very very very very long long long text for picture 2",
+		"picture": "main_page/Candle.JPG",
+		"description": "Öszi hangulatú gyertyácska gesztenyékkel",
 		"link": "drawings"
 	},
 	{
-		"picture": "main_page/3.png",
-		"description": "Some very very very very very very very long long long text for picture 3",
+		"picture": "main_page/Wreath.JPG",
+		"description": "Koszorú gesztenyékből",
 		"link": "drawings"
 	},
 	{
-		"picture": "main_page/2.png",
-		"description": "Some very very very very very very very long long long text for picture 3",
+		"picture": "main_page/Candle.JPG",
+		"description": "Öszi hangulatú gyertyácska gesztenyékkel",
 		"link": "drawings"
 	},
 	{
-		"picture": "main_page/1.png",
-		"description": "Some very very very very very very very long long long text for picture 3",
+		"picture": "main_page/Candle.JPG",
+		"description": "Öszi hangulatú gyertyácska gesztenyékkel",
 		"link": "drawings"
-	},
-	{
-		"picture": "main_page/3.png",
-		"description": "Some very very very very very very very long long long text for picture 3",
-		"link": "drawings"
-	},
-	{
-		"picture": "main_page/4.png",
-		"description": "Some very very very very very very very long long long text for picture 4",
-		"link": "stories"
 	}
 ]
