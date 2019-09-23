@@ -21,14 +21,14 @@
             <div v-for="(item, index) in updates" v-bind:key="item.id">
                 <div v-if="index % 2 == 0" class="updates-div">
                     <router-link v-bind:to=item.link>
-                        <img class="updates-picture" v-bind:src=item.picture width=320px height=320px>
+                        <img class="updates-picture" v-bind:src=item.picture width=320px height=240px>
                     </router-link>
                     <div class="updates-description">{{item.description}}</div>
                 </div>
                 <div v-else class="updates-div">
                     <div class="updates-description">{{item.description}}</div>
                     <router-link v-bind:to=item.link>
-                        <img class="updates-picture" v-bind:src=item.picture width=320px height=320px>
+                        <img class="updates-picture" v-bind:src=item.picture width=320px height=240px>
                     </router-link>
                 </div>
             </div>
@@ -92,30 +92,26 @@ export default {
     border-color: #2e1808;
     border-width: 1px;
     border-radius: 15px;
+
+    filter: grayscale(75%);
+    opacity: 0.8;
+}
+
+.highlight-item:hover {
+    filter: grayscale(0%);
+    opacity: 1;
 }
 
 .highlight-item1 {
     background-image: url("../assets/design/highlights/Drawings_1.png");
 }
 
-.highlight-item1:hover {
-    background-image: url("../assets/design/highlights/Drawings_2.png");
-}
-
 .highlight-item2 {
     background-image: url("../assets/design/highlights/Games_1.png");
 }
 
-.highlight-item2:hover {
-    background-image: url("../assets/design/highlights/Games_2.png");
-}
-
 .highlight-item3 {
     background-image: url("../assets/design/highlights/Stories_1.png");
-}
-
-.highlight-item3:hover {
-    background-image: url("../assets/design/highlights/Stories_2.png");
 }
 
 .highlight-item-fadein {
@@ -158,6 +154,15 @@ export default {
 
 .updates-picture {
     vertical-align: middle;
+    border-radius: 15px;
+    filter: grayscale(75%);
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+.updates-picture:hover {
+    filter: grayscale(0%);
+    opacity: 1;
 }
 
 .updates-description {
