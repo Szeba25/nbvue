@@ -2,98 +2,19 @@
     <div class="drawingspage-content">
         <h2 class="drawings-title centered">Válassz évet!</h2>
         <div class="drawings-years">
-            <div class="faded-icon" v-bind:style="{'background-image': 'url(/'+item.picture+')'}" v-for="item in years" v-bind:key="item.id" @click="showModal=true"></div>
+            <div class="faded-icon" v-bind:style="{'background-image': 'url(/'+item.picture+')'}" v-for="item in years" v-bind:key="item.id"></div>
         </div>
-
-        <modal v-if="showModal" @close="showModal = false">
-            <div slot="body">
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-                <p>Content</p>
-            </div>
-        </modal>
-
     </div>
 </template>
 
 <script>
 import Axios from 'axios';
 
-import Modal from './Modal.vue';
-
 export default {
     name: 'DrawingsPage',
 
     data() {
         return {
-            showModal: false,
             years: []
         }
     },
@@ -104,10 +25,6 @@ export default {
                 this.years.push(response.data[i]);
             }
         });
-    },
-
-    components: {
-        Modal
     }
 };
 </script>
