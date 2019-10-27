@@ -46,7 +46,6 @@ export default {
 
     created() {
         this.loadYears();
-        window.console.log(this.$route.params);
     },
 
     methods: {
