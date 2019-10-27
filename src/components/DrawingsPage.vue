@@ -36,17 +36,6 @@ import Axios from 'axios';
 export default {
     name: 'DrawingsPage',
 
-    watch: {
-        '$route.params.year'(year) {
-            if (year != "select") {
-                this.selectYear(year);
-            } else {
-                this.selectedYear = "";
-                this.loadYears();
-            }
-        }
-    },
-
     data() {
         return {
             years: [],
@@ -62,6 +51,17 @@ export default {
         } else {
             this.selectedYear = "";
             this.loadYears();
+        }
+    },
+
+    watch: {
+        '$route.params.year'(year) {
+            if (year != "select") {
+                this.selectYear(year);
+            } else {
+                this.selectedYear = "";
+                this.loadYears();
+            }
         }
     },
 
