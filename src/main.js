@@ -16,7 +16,7 @@ Vue.config.productionTip = false;
 
 const routes = [
     { path: '/', components: { default: MainPage } },
-    { path: '/drawings', components: { default: DrawingsPage } },
+    { path: '/drawings/:year', components: { default: DrawingsPage } },
     { path: '/creative', components: { default: CreativePage } },
     { path: '/games', components: { default: GamesPage } },
     { path: '/stories', components: { default: StoriesPage } },

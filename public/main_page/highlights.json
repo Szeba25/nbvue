@@ -2,16 +2,16 @@
 	{
 		"picture": "main_page/Autumn_Leaf.JPG",
 		"description": "Őszi falevélkés rajzocska izébigyó",
-		"link": "drawings"
+		"link": "/drawings/2019"
 	},
 	{
 		"picture": "main_page/Candle.JPG",
 		"description": "Öszi hangulatú gyertyácska gesztenyékkel",
-		"link": "drawings"
+		"link": "/drawings/2018"
 	},
 	{
 		"picture": "main_page/Wreath.JPG",
 		"description": "Koszorú gesztenyékből",
-		"link": "drawings"
+		"link": "/drawings/2018"
 	}
 ]

@@ -2,7 +2,7 @@
     <div v-if="selectedYear">
         <div class="drawingspage-pictures-content">
             <h2 class="drawings-title centered">{{selectedYear}}. év</h2>
-            <p class="drawings-back" v-on:click="resetYear()">Vissza</p>
+            <router-link class="drawings-back" to="select">Vissza</router-link>
             <div class="drawings-pictures">
                 <div v-for="pic in pictures" v-bind:key="pic.id">
                     <a v-bind:href=pic.picture target="_blank">
@@ -19,12 +19,12 @@
         <div class="drawingspage-years-content">
             <h2 class="drawings-title centered">Válassz évet!</h2>
             <div class="drawings-years">
-                <div class="icon-base faded-icon" 
+                <router-link class="icon-base faded-icon" 
                     v-bind:style="{'background-image': 'url(/'+yr.picture+')'}" 
                     v-for="yr in years" 
                     v-bind:key="yr.id" 
-                    v-on:click="selectYear(yr.year)">
-                </div>
+                    :to="yr.year">
+                </router-link>
             </div>
         </div>
     </div>
@@ -36,6 +36,17 @@ import Axios from 'axios';
 export default {
     name: 'DrawingsPage',
 
+    watch: {
+        '$route.params.year'(year) {
+            if (year != "select") {
+                this.selectYear(year);
+            } else {
+                this.selectedYear = "";
+                this.loadYears();
+            }
+        }
+    },
+
     data() {
         return {
             years: [],
@@ -45,15 +56,16 @@ export default {
     },
 
     created() {
-        this.loadYears();
+        let year = this.$route.params.year;
+        if (year != "select") {
+            this.selectYear(year);
+        } else {
+            this.selectedYear = "";
+            this.loadYears();
+        }
     },
 
     methods: {
-        resetYear() {
-            this.selectedYear = "";
-            this.loadYears();
-        },
-
         selectYear(year) {
             this.selectedYear = year;
             

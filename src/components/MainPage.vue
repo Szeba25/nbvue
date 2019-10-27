@@ -52,7 +52,7 @@ export default {
     },
 
     created() {
-        Axios.get('/main_page/data.json').then((response) => {
+        Axios.get('/main_page/highlights.json').then((response) => {
             for (let i = 0; i < response.data.length; i++) {
                 this.updates.push(response.data[i]);
             }

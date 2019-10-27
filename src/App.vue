@@ -6,7 +6,7 @@
         <div>
             <hr>
             <div class="menu-content">
-                <router-link to="/drawings"><p class="menu-point">Rajzok</p></router-link>
+                <router-link to="/drawings/select"><p class="menu-point">Rajzok</p></router-link>
                 <router-link to="/creative"><p class="menu-point">Kreatív</p></router-link>
                 <router-link to="/games"><p class="menu-point">Játékok</p></router-link>
                 <router-link to="/stories"><p class="menu-point">Történetek</p></router-link>
@@ -26,6 +26,10 @@ export default {
 </script>
 
 <style>
+html {
+    overflow-y:scroll;
+}
+
 body {
     margin: auto;
     max-width: 1000px;
