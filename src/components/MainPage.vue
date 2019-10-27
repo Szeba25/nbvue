@@ -5,13 +5,13 @@
         </div>
         <div class="highlights">
             <router-link to="drawings">
-                <div class="faded-icon highlight-item1"><div class="faded-icon-fadein centered">Rajzok</div></div>
+                <div class="icon-base faded-icon highlight-item1"><div class="faded-icon-fadein centered">Rajzok</div></div>
             </router-link>
             <router-link to="games">
-                <div class="faded-icon highlight-item2"><div class="faded-icon-fadein centered">Játékok</div></div>
+                <div class="icon-base faded-icon highlight-item2"><div class="faded-icon-fadein centered">Játékok</div></div>
             </router-link>
             <router-link to="stories">
-                <div class="faded-icon highlight-item3"><div class="faded-icon-fadein centered">Történetek</div></div>
+                <div class="icon-base faded-icon highlight-item3"><div class="faded-icon-fadein centered">Történetek</div></div>
             </router-link>
         </div>
         <div class="main-separator">
@@ -30,7 +30,7 @@
                 </div>
                 <div v-else class="updates-div">
                     <div class="description-bkg"><div class="updates-description">{{item.description}}</div></div>
-                    <router-link v-bind:to=item.link>
+                   <router-link v-bind:to=item.link>
                         <img class="updates-picture" v-bind:src=item.picture width=318px height=238px>
                     </router-link>
                 </div>

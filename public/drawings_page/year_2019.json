@@ -1,0 +1,27 @@
+[
+    {
+        "icon": "drawings_page/Drawings_1.png",
+        "picture": "drawings_page/Drawings_1.png",
+        "note": "Beautiful picture 1"
+    },
+    {
+        "icon": "drawings_page/Drawings_1.png",
+        "picture": "drawings_page/Drawings_2.png",
+        "note": "Beautiful picture 2 with a very very long note!<br>and a break!"
+    },
+    {
+        "icon": "drawings_page/Drawings_1.png",
+        "picture": "drawings_page/Drawings_1.png",
+        "note": "Beautiful picture 3 with a very very long note!<br>and a break!"
+    },
+    {
+        "icon": "drawings_page/Drawings_1.png",
+        "picture": "drawings_page/Drawings_1.png",
+        "note": "Beautiful picture 4 with a very very long note!<br>and a break!"
+    },
+    {
+        "icon": "drawings_page/Drawings_1.png",
+        "picture": "drawings_page/Drawings_1.png",
+        "note": "Beautiful picture 4 with a very very long note!<br>and a break!"
+    }
+]

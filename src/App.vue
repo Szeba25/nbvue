@@ -78,11 +78,12 @@ a {
 }
 
 /* Faded icons */
-.faded-icon {
+.icon-base {
     width: 200px;
     height: 200px;
     margin: 0px 10px;
-    transition: 0.3s;
+    cursor: pointer;
+    
     background-size: cover;
 
     border-style: solid;
@@ -90,10 +91,13 @@ a {
     border-width: 1px;
     border-radius: 15px;
 
+    box-shadow: 0px 0px 15px 3px #35261a93;
+}
+
+.faded-icon {
+    transition: 0.3s; /* Comment this line out if I die */
     filter: grayscale(75%);
     opacity: 0.8;
-
-    box-shadow: 0px 0px 15px 3px #35261a93;
 }
 
 .faded-icon:hover {
