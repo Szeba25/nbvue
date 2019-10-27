@@ -4,13 +4,13 @@
             <h2>Kiemelt tartalmak</h2>
         </div>
         <div class="highlights">
-            <router-link to="drawings">
+            <router-link to="/drawings/select">
                 <div class="icon-base faded-icon highlight-item1"><div class="faded-icon-fadein centered">Rajzok</div></div>
             </router-link>
-            <router-link to="games">
+            <router-link to="/games">
                 <div class="icon-base faded-icon highlight-item2"><div class="faded-icon-fadein centered">Játékok</div></div>
             </router-link>
-            <router-link to="stories">
+            <router-link to="/stories">
                 <div class="icon-base faded-icon highlight-item3"><div class="faded-icon-fadein centered">Történetek</div></div>
             </router-link>
         </div>
