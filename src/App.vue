@@ -54,6 +54,13 @@ h2 {
     margin: 5px 0px;
 }
 
+h3 {
+    font-family: "Monotype Corsiva";
+    color: #2e1808;
+    font-size: 22px;
+    margin: 5px 0px;
+}
+
 p {
     font-family: "Monotype Corsiva";
     color: #2e1808;
