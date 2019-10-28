@@ -4,6 +4,7 @@ import VueRouter from 'vue-router';
 
 import MainPage from './components/MainPage.vue';
 import DrawingsPage from './components/DrawingsPage.vue';
+import DrawingsYearPage from './components/DrawingsYearPage.vue'
 import CreativePage from './components/CreativePage.vue';
 import GamesPage from './components/GamesPage.vue';
 import StoriesPage from './components/StoriesPage.vue';
@@ -16,7 +17,8 @@ Vue.config.productionTip = false;
 
 const routes = [
     { path: '/', components: { default: MainPage } },
-    { path: '/drawings/:year', components: { default: DrawingsPage } },
+    { path: '/drawings', components: { default: DrawingsPage } },
+    { path: '/drawings/:year', components: { default: DrawingsYearPage } },
     { path: '/creative', components: { default: CreativePage } },
     { path: '/games', components: { default: GamesPage } },
     { path: '/stories', components: { default: StoriesPage } },

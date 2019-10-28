@@ -4,7 +4,7 @@
             <h2>Kiemelt tartalmak</h2>
         </div>
         <div class="highlights">
-            <router-link to="/drawings/select">
+            <router-link to="/drawings">
                 <div class="icon-base faded-icon highlight-item1"><div class="faded-icon-fadein centered">Rajzok</div></div>
             </router-link>
             <router-link to="/games">
