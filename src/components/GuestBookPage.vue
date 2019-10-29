@@ -12,7 +12,8 @@
             <img src="@/assets/design/rating/star_on.png" v-for="n in newPost.rating" v-bind:key="n+'A'" v-on:click="setRating(n)">
             <img src="@/assets/design/rating/star_off.png" v-for="k in 10-newPost.rating" v-bind:key="k+'B'" v-on:click="setRating(k+(newPost.rating))">
             <p class="line-gb">Üzenet:</p>
-            <textarea class="noresize input-gb" rows="8"></textarea>
+            <textarea class="noresize input-gb" rows="8"></textarea><br>
+            <input class="button-gb" type="button" value="Küldés">
         </div>
         <div class="posts">
             <h2 class="centered">Bejegyzések</h2>
@@ -135,13 +136,40 @@ export default {
     border: 2px solid #ebccb7;
     border-radius: 4px;
     background-color: #f8f8f8;
-
 }
 
 .input-gb:focus {
     outline: none;
     border: 2px solid #d48545;
     border-radius: 4px;
+    box-shadow: 0 0 10px #35261a93;
+}
+
+.button-gb {
+    font-family: "Monotype Corsiva";
+    font-size: 18px;
+    color: #2e1808;
+    width: 100px;
+    
+    padding: 8px 8px;
+    margin: 10px 0px 0px 110px;
+    box-sizing: border-box;
+    border: 2px solid #ebccb7;
+    border-radius: 8px;
+    background-color: #f8f8f8;
+
+    transition: 0.3s;
+}
+
+.button-gb:hover {
+    background-color: #d48545;
+    cursor: pointer;
+}
+
+.button-gb:focus {
+    outline: none;
+    border: 2px solid #d48545;
+    border-radius: 8px;
     box-shadow: 0 0 10px #35261a93;
 }
 

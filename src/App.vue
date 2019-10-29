@@ -153,6 +153,10 @@ a {
     box-shadow: 0px 0px 25px 5px #35261a93;
 }
 
+.warning {
+    margin: 60px 0px 0px 0px;
+}
+
 .logo {
     display: table;
     height: 80px;
