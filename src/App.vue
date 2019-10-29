@@ -138,6 +138,38 @@ a {
     opacity: 1;
     margin: 170px 20px 0px 20px;
 }
+
+.nb-button {
+    font-family: "Monotype Corsiva";
+    font-size: 18px;
+    color: #2e1808;
+    width: 100px;
+    
+    padding: 8px 8px;
+    box-sizing: border-box;
+    border: 2px solid #ebccb7;
+    border-radius: 8px;
+    background-color: #f8f8f8;
+
+    transition: 0.3s;
+}
+
+.button-centered {
+    margin: 0px auto;
+    display: block;
+}
+
+.nb-button:hover {
+    background-color: #d48545;
+    cursor: pointer;
+}
+
+.nb-button:focus {
+    outline: none;
+    border: 2px solid #d48545;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #35261a93;
+}
 </style>
 
 <style scoped>

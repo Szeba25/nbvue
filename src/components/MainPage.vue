@@ -70,14 +70,14 @@ export default {
 }
 
 .highlights-title {
-    padding: 30px 0px 15px 0px;
+    padding: 30px 0px 10px 0px;
 }
 
 .highlights {
     margin: 0px auto;
     display: grid;
     grid-template-columns: 220px 220px 220px;
-    grid-gap: 0px;
+    grid-gap: 10px;
     padding: 0px;
 }
 
