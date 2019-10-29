@@ -6,8 +6,6 @@
             <input class="input-gb" type="text">
             <p class="line-gb">E-mail:</p>
             <input class="input-gb" type="text">
-            <p class="line-gb">Település:</p>
-            <input class="input-gb" type="text">
             <p class="line-gb">Értékelés:</p>
             <img src="@/assets/design/rating/star_on.png" v-for="n in newPost.rating" v-bind:key="n+'A'" v-on:click="setRating(n)">
             <img src="@/assets/design/rating/star_off.png" v-for="k in 10-newPost.rating" v-bind:key="k+'B'" v-on:click="setRating(k+(newPost.rating))">
@@ -21,10 +19,9 @@
                 <p class="post-text"><b>Név:</b> {{item.name}}</p>
                 <p class="post-text"><b>Dátum:</b> 2019.10.10, 13:45</p>
                 <p class="post-text"><b>E-mail:</b> {{item.email}}</p>
-                <p class="post-text"><b>Település:</b> {{item.town}}</p>
                 <p class="post-text"><b>Értékelés: {{item.rating}} / 10</b></p>
                 <hr class="post-hr">
-                <p class="post-main-text">{{item.text}}</p>
+                <p class="post-main-text">{{item.message}}</p>
             </div>
             <input class="nb-button button-centered" type="button" value="Több üzenet" v-on:click="loadMorePosts()">
         </div>
@@ -41,18 +38,17 @@ export default {
             newPost: {
                 name: "",
                 email: "",
-                town: "",
                 rating: 10,
-                text: ""
+                message: ""
             }
         }
     },
 
     created() {
-        this.posts.push({name: "Jóska", email:"joska@gmail.com", town:"Hahót", rating:7, text:"Jó az oldal!"});
-        this.posts.push({name: "Feri", email:"feri@gmail.com", town:"Vasboldogasszony", rating:7, text:"Hosszú szöveg Hosszú szöveg Hosszú szöveg Hosszú szöveg Hosszú szöveg Hosszú szöveg Hosszú szöveg Hosszú szöveg Hosszú szöveg Hosszú szöveg Hosszú szöveg Hosszú szöveg Hosszú szöveg Hosszú szöveg Hosszú szöveg Hosszú szöveg Hosszú szöveg Hosszú szöveg"});
-        this.posts.push({name: "János", email:"janos@gmail.com", town:"Hahót", rating:7, text:"Jó az oldal!"});
-        this.posts.push({name: "Bob", email:"bob@gmail.com", town:"Hahót", rating:7, text:"Jó az oldal!"});
+        this.posts.push({name: "Jóska", email:"joska@gmail.com", rating:7, message:"Jó az oldal!"});
+        this.posts.push({name: "Feri", email:"feri@gmail.com", rating:7, message:"Hosszú szöveg Hosszú szöveg Hosszú szöveg Hosszú szöveg Hosszú szöveg Hosszú szöveg Hosszú szöveg Hosszú szöveg Hosszú szöveg Hosszú szöveg Hosszú szöveg Hosszú szöveg Hosszú szöveg Hosszú szöveg Hosszú szöveg Hosszú szöveg Hosszú szöveg Hosszú szöveg"});
+        this.posts.push({name: "János", email:"janos@gmail.com", rating:7, message:"Jó az oldal!"});
+        this.posts.push({name: "Bob", email:"bob@gmail.com", rating:7, message:"Jó az oldal!"});
     },
 
     methods: {
@@ -62,7 +58,7 @@ export default {
 
         loadMorePosts() {
             for (let i = 0; i < 10; i++) {
-                this.posts.push({name: "Bob", email:"bob@gmail.com", town:"Hahót", rating:7, text:"Jó az oldal!"});
+                this.posts.push({name: "Bob", email:"bob@gmail.com", rating:7, message:"Jó az oldal!"});
             }
         }
     }
