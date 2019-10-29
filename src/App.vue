@@ -170,6 +170,10 @@ a {
     border-radius: 8px;
     box-shadow: 0 0 10px #35261a93;
 }
+
+.nb-button:disabled {
+    background-color: #757575;
+}
 </style>
 
 <style scoped>

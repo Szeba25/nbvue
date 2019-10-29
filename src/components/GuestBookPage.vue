@@ -3,37 +3,42 @@
         <div class="new-post">
             <h2 class="centered">Új bejegyzés</h2>
             <p class="line-gb">Név:</p>
-            <input class="input-gb" type="text">
+            <input class="input-gb" type="text" v-model="newPost.name">
             <p class="line-gb">E-mail:</p>
-            <input class="input-gb" type="text">
+            <input class="input-gb" type="text" v-model="newPost.email">
             <p class="line-gb">Értékelés:</p>
             <img src="@/assets/design/rating/star_on.png" v-for="n in newPost.rating" v-bind:key="n+'A'" v-on:click="setRating(n)">
             <img src="@/assets/design/rating/star_off.png" v-for="k in 10-newPost.rating" v-bind:key="k+'B'" v-on:click="setRating(k+(newPost.rating))">
             <p class="line-gb">Üzenet:</p>
-            <textarea class="noresize input-gb" rows="8"></textarea><br>
-            <input class="input-space nb-button button-centered" type="button" value="Küldés">
+            <textarea class="noresize input-gb" rows="8" v-model="newPost.message"></textarea><br>
+            <input class="input-space nb-button button-centered" type="button" value="Küldés" v-on:click="post()" v-bind:disabled="loading">
         </div>
         <div class="posts">
             <h2 class="centered">Bejegyzések</h2>
             <div v-bind:class="'post' + (index%2+1) + ' post'" v-for="(item, index) in posts" v-bind:key="item.id">
                 <p class="post-text"><b>Név:</b> {{item.name}}</p>
-                <p class="post-text"><b>Dátum:</b> 2019.10.10, 13:45</p>
+                <p class="post-text"><b>Dátum:</b> {{item.date}}</p>
                 <p class="post-text"><b>E-mail:</b> {{item.email}}</p>
                 <p class="post-text"><b>Értékelés: {{item.rating}} / 10</b></p>
                 <hr class="post-hr">
                 <p class="post-main-text">{{item.message}}</p>
             </div>
-            <input class="nb-button button-centered" type="button" value="Több üzenet" v-on:click="loadMorePosts()">
+            <input class="nb-button button-centered" v-bind:disabled="loading" type="button" value="Több üzenet" v-on:click="loadMorePosts()">
         </div>
     </div>
 </template>
 
 <script>
+import Axios from 'axios';
+
 export default {
     name: 'GuestBookPage',
 
     data() {
         return {
+            top: 3,
+            last: -1,
+            loading: false,
             posts: [],
             newPost: {
                 name: "",
@@ -45,10 +50,7 @@ export default {
     },
 
     created() {
-        this.posts.push({name: "Jóska", email:"joska@gmail.com", rating:7, message:"Jó az oldal!"});
-        this.posts.push({name: "Feri", email:"feri@gmail.com", rating:7, message:"Hosszú szöveg Hosszú szöveg Hosszú szöveg Hosszú szöveg Hosszú szöveg Hosszú szöveg Hosszú szöveg Hosszú szöveg Hosszú szöveg Hosszú szöveg Hosszú szöveg Hosszú szöveg Hosszú szöveg Hosszú szöveg Hosszú szöveg Hosszú szöveg Hosszú szöveg Hosszú szöveg"});
-        this.posts.push({name: "János", email:"janos@gmail.com", rating:7, message:"Jó az oldal!"});
-        this.posts.push({name: "Bob", email:"bob@gmail.com", rating:7, message:"Jó az oldal!"});
+        this.loadMorePosts();
     },
 
     methods: {
@@ -57,9 +59,42 @@ export default {
         },
 
         loadMorePosts() {
-            for (let i = 0; i < 10; i++) {
-                this.posts.push({name: "Bob", email:"bob@gmail.com", rating:7, message:"Jó az oldal!"});
-            }
+            this.loading = true;
+            Axios.get("php/select.php?last=" + this.last + "&top=" + this.top).then((response) => {
+                for (let i = 0; i < response.data.length; i++) {
+                    response.data[i].rating = parseInt(response.data[i].rating);
+                    this.posts.push(response.data[i]);
+                }
+                this.last = parseInt(this.posts[this.posts.length-1].id);
+                setTimeout(() => {
+                    this.loading = false;
+                }, 1500);
+            });
+        },
+
+        toFormData(obj) {
+			let form_data = new FormData();
+			for (let key in obj) {
+				form_data.append(key, obj[key]);
+			}
+			return form_data;
+        },
+        
+        post() {
+            Axios.post("php/insert.php", this.toFormData(this.newPost)).then((response) => {
+                if (response.data != "SUCCESS") {
+                    alert(response.data);
+                } else {
+                    this.newPost.name = "";
+                    this.newPost.email = "";
+                    this.newPost.rating = 10;
+                    this.newPost.message = "";
+                    alert("Post sent!");
+                    this.last = -1;
+                    this.posts = [];
+                    this.loadMorePosts();
+                }
+            });
         }
     }
 }
