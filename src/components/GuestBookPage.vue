@@ -8,18 +8,8 @@
         <p class="line-gb">Település:</p>
         <input class="input-gb" type="text">
         <p class="line-gb">Értékelés:</p>
-        <select class="input-gb" name="rating">
-            <option value="10">10</option>
-            <option value="9">9</option>
-            <option value="8">8</option>
-            <option value="7">7</option>
-            <option value="6">6</option>
-            <option value="5">5</option>
-            <option value="4">4</option>
-            <option value="3">3</option>
-            <option value="2">2</option>
-            <option value="1">1</option>
-        </select>
+        <img src="@/assets/design/rating/star_on.png" v-for="n in newPost.rating" v-bind:key="n+'A'" v-on:click="setRating(n)">
+        <img src="@/assets/design/rating/star_off.png" v-for="k in 10-newPost.rating" v-bind:key="k+'B'" v-on:click="setRating(k+(newPost.rating))">
         <p class="line-gb">Üzenet:</p>
         <textarea class="noresize input-gb" rows="8"></textarea>
     </div>
@@ -39,6 +29,12 @@ export default {
                 rating: 10,
                 text: ""
             }
+        }
+    },
+
+    methods: {
+        setRating(rating) {
+            this.newPost.rating = rating;
         }
     }
 }
@@ -63,7 +59,7 @@ export default {
 
 .input-gb {
     font-family: Arial;
-    width: 400px;
+    width: 320px;
     
     padding: 8px 8px;
     box-sizing: border-box;
