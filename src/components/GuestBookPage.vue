@@ -7,8 +7,8 @@
             <p class="line-gb">E-mail:</p>
             <input class="input-gb" type="text" v-model="newPost.email">
             <p class="line-gb">Értékelés:</p>
-            <img src="@/assets/design/rating/star_on.png" v-for="n in newPost.rating" v-bind:key="n+'A'" v-on:click="setRating(n)">
-            <img src="@/assets/design/rating/star_off.png" v-for="k in 10-newPost.rating" v-bind:key="k+'B'" v-on:click="setRating(k+(newPost.rating))">
+            <img class="rating-star" src="@/assets/design/rating/star_on.png" v-for="n in newPost.rating" v-bind:key="n+'A'" v-on:click="setRating(n)">
+            <img class="rating-star" src="@/assets/design/rating/star_off.png" v-for="k in 10-newPost.rating" v-bind:key="k+'B'" v-on:click="setRating(k+(newPost.rating))">
             <p class="line-gb">Üzenet:</p>
             <textarea class="noresize input-gb" rows="8" v-model="newPost.message"></textarea><br>
             <input class="input-space nb-button button-centered" type="button" value="Küldés" v-on:click="post()" v-bind:disabled="loading">
@@ -212,4 +212,7 @@ export default {
     box-shadow: 0 0 10px #35261a93;
 }
 
+.rating-star {
+    cursor: pointer;
+}
 </style>

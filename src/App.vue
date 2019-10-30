@@ -28,12 +28,12 @@
             <hr class="menu-hr">
             <div v-bind:class="'mobile-menu-content mobile-menu-visible-' + mobileMenuVisible">
                 <div>
-                    <h3>Rajzok</h3>
-                    <h3>Kreatív</h3>
-                    <h3>Játékok</h3>
-                    <h3>Történetek</h3>
-                    <h3>Receptek</h3>
-                    <h3>Vendégkönyv</h3>
+                    <router-link to="/drawings"><p class="mobile-menu-point">Rajzok</p></router-link>
+                    <router-link to="/creative"><p class="mobile-menu-point">Kreatív</p></router-link>
+                    <router-link to="/games"><p class="mobile-menu-point">Játékok</p></router-link>
+                    <router-link to="/stories"><p class="mobile-menu-point">Történetek</p></router-link>
+                    <router-link to="/recipes"><p class="mobile-menu-point">Receptek</p></router-link>
+                    <router-link to="/guestbook"><p class="mobile-menu-point">Vendégkönyv</p></router-link>
                 </div>
             </div>
             <hr class="menu-hr">
@@ -46,6 +46,12 @@
 export default {
     name: 'App',
     
+    watch:{
+        $route() {
+            this.mobileMenuVisible = false;
+        }
+    },
+
     data() {
         return {
             mobileMenuVisible: false
@@ -263,13 +269,14 @@ a {
 .mobile-menu-visible-false {
     opacity: 0;
     height: 0px;
-    transition: 0.8s;
+    transition: 0.6s;
+    overflow: hidden;
 }
 
 .mobile-menu-visible-true {
     opacity: 1s;
-    height: 200px;
-    transition: 0.8s;
+    height: 250px;
+    transition: 0.6s;
 }
 
 .logo-text {
@@ -304,6 +311,20 @@ a {
 }
 
 .menu-point:hover {
+    font-size: 28px;
+    color: #d48545;
+    transition: 0.3s;
+    transition-timing-function: ease;
+}
+
+.mobile-menu-point {
+    font-size: 26px;
+    margin: 16px 0px;
+    transition: 0.3s;
+    transition-timing-function: ease;
+}
+
+.mobile-menu-point:hover {
     font-size: 28px;
     color: #d48545;
     transition: 0.3s;
