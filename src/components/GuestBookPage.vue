@@ -23,7 +23,7 @@
                 <hr class="post-hr">
                 <p class="post-main-text">{{item.message}}</p>
             </div>
-            <input class="nb-button button-centered" v-bind:disabled="loading" type="button" value="Több üzenet" v-on:click="loadMorePosts()">
+            <input class="nb-button button-centered" v-bind:disabled="loading || noMoreMessages" type="button" v-bind:value="moreMessage" v-on:click="loadMorePosts()">
         </div>
     </div>
 </template>
@@ -36,9 +36,10 @@ export default {
 
     data() {
         return {
-            top: 3,
-            last: -1,
+            top: 10,
             loading: false,
+            moreMessage: "Több üzenet",
+            noMoreMessages: false,
             posts: [],
             newPost: {
                 name: "",
@@ -58,17 +59,44 @@ export default {
             this.newPost.rating = rating;
         },
 
-        loadMorePosts() {
+        loadNewPosts() {
             this.loading = true;
-            Axios.get("php/select.php?last=" + this.last + "&top=" + this.top).then((response) => {
+
+            let first = -1;
+            if (this.posts.length > 0) {
+                first = parseInt(this.posts[0].id);
+            }
+
+            Axios.get("php/select_new.php?first=" + first).then((response) => {
                 for (let i = 0; i < response.data.length; i++) {
                     response.data[i].rating = parseInt(response.data[i].rating);
-                    this.posts.push(response.data[i]);
+                    this.posts.unshift(response.data[i]);
                 }
-                this.last = parseInt(this.posts[this.posts.length-1].id);
-                setTimeout(() => {
-                    this.loading = false;
-                }, 1500);
+                this.loading = false;
+            });
+        },
+
+        loadMorePosts() {
+            this.loading = true;
+
+            let last = -1;
+            if (this.posts.length > 0) {
+                last = parseInt(this.posts[this.posts.length-1].id);
+            }
+
+            Axios.get("php/select_old.php?last=" + last + "&top=" + this.top).then((response) => {
+                let arr = response.data["results"];
+                if (arr.length > 0) {
+                    for (let i = 0; i < arr.length; i++) {
+                        arr.rating = parseInt(arr[i].rating);
+                        this.posts.push(arr[i]);
+                    }
+                }
+                if (response.data["end_of_results"]) {
+                    this.moreMessage = "Vége...";
+                    this.noMoreMessages = true;
+                }
+                this.loading = false;
             });
         },
 
@@ -89,10 +117,7 @@ export default {
                     this.newPost.email = "";
                     this.newPost.rating = 10;
                     this.newPost.message = "";
-                    alert("Post sent!");
-                    this.last = -1;
-                    this.posts = [];
-                    this.loadMorePosts();
+                    this.loadNewPosts();
                 }
             });
         }
