@@ -21,7 +21,9 @@
         <div class="main-layout-mobile">
             <div class="logo-mobile">
                 <router-link to="/"><h1 class="logo-text-mobile">Never Been</h1></router-link>
-                <img src="@/assets/design/menu.png"/>
+                <div class="mobile-menu">
+                    <img src="@/assets/design/menu.png">
+                </div>
             </div>
             <hr class="menu-hr">
             <router-view class="content"></router-view>
