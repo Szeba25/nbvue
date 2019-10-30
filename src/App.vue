@@ -73,6 +73,7 @@ html {
 
 body {
     margin: auto;
+    min-width: 600px;
     max-width: 1200px;
     background-color: #f1d7c6;
 }
