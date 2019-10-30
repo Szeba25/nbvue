@@ -21,8 +21,19 @@
         <div class="main-layout-mobile">
             <div class="logo-mobile">
                 <router-link to="/"><h1 class="logo-text-mobile">Never Been</h1></router-link>
-                <div class="mobile-menu">
+                <div class="mobile-menu" v-on:click="toggleMobileMenu()">
                     <img src="@/assets/design/menu.png">
+                </div>
+            </div>
+            <hr class="menu-hr">
+            <div v-bind:class="'mobile-menu-content mobile-menu-visible-' + mobileMenuVisible">
+                <div>
+                    <h3>Rajzok</h3>
+                    <h3>Kreatív</h3>
+                    <h3>Játékok</h3>
+                    <h3>Történetek</h3>
+                    <h3>Receptek</h3>
+                    <h3>Vendégkönyv</h3>
                 </div>
             </div>
             <hr class="menu-hr">
@@ -33,7 +44,19 @@
 
 <script>
 export default {
-    name: 'App'
+    name: 'App',
+    
+    data() {
+        return {
+            mobileMenuVisible: false
+        }
+    },
+
+    methods: {
+        toggleMobileMenu() {
+            this.mobileMenuVisible = !this.mobileMenuVisible;
+        }
+    }
 };
 </script>
 
@@ -190,7 +213,7 @@ a {
 <style scoped>
 .main-layout {
     display: grid;
-    grid-template-rows: 100px auto auto;
+    grid-template-rows: min-content min-content min-content;
     grid-gap: 0px;
     padding: 0px;
     margin: 20px;
@@ -202,7 +225,7 @@ a {
 
 .main-layout-mobile {
     display: none;
-    grid-template-rows: auto auto auto;
+    grid-template-rows: min-content min-content min-content min-content;
     grid-gap: 0px;
     padding: 0px;
     margin: 20px;
@@ -218,7 +241,7 @@ a {
 
 .logo {
     display: table;
-    height: 180px;
+    height: 80px;
     overflow: hidden;
     padding: 20px 0px 0px 0px;
     margin: auto;
@@ -231,6 +254,22 @@ a {
     overflow: hidden;
     padding: 20px 0px 0px 0px;
     margin: 0px 20px 0px 20px;
+}
+
+.mobile-menu-content {
+    text-align: center;
+}
+
+.mobile-menu-visible-false {
+    opacity: 0;
+    height: 0px;
+    transition: 0.8s;
+}
+
+.mobile-menu-visible-true {
+    opacity: 1s;
+    height: 175px;
+    transition: 0.8s;
 }
 
 .logo-text {
@@ -274,6 +313,10 @@ a {
 @media only screen and (max-width: 900px) {
     .main-layout {
         display: none;
+    }
+
+    .main-layout-mobile {
+        display: grid;
     }
 
     .main-layout-mobile {
