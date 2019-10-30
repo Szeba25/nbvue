@@ -36,6 +36,16 @@
                 </div>
             </div>
         </div>
+        <div class="updates-mobile">
+            <div v-for="item in updates" v-bind:key="item.id">
+                <div class="updates-div-mobile">
+                    <router-link v-bind:to=item.link>
+                        <img class="updates-picture" v-bind:src=item.picture width=318px height=238px>
+                    </router-link>
+                    <div class="description-bkg-mobile"><div class="updates-description-mobile">{{item.description}}</div></div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -64,7 +74,7 @@ export default {
 <style scoped>
 .mainpage-content {
     display: grid;
-    grid-template-rows: min-content 200px min-content min-content auto;
+    grid-template-rows: min-content min-content min-content min-content auto;
     grid-gap: 0px;
     padding: 0px;
 }
@@ -103,12 +113,27 @@ export default {
 
 .updates {
     margin: 0px auto 30px auto;
+    display: block;
+}
+
+.updates-mobile {
+    margin: 0px auto 30px auto;
+    display: none;
 }
 
 .updates-div {
     display: grid;
     grid-template-columns: 320px 320px;
     grid-gap: 20px;
+    align-items: center;
+    text-align: center;
+    margin: 0px 0px 10px 0px;
+}
+
+.updates-div-mobile {
+    display: grid;
+    grid-template-columns: 320px;
+    grid-gap: 25px;
     align-items: center;
     text-align: center;
     margin: 0px 0px 10px 0px;
@@ -139,10 +164,38 @@ export default {
     margin: 0px 20px;
 }
 
+.updates-description-mobile {
+    width: 280px;
+    font-family: "Monotype Corsiva";
+    font-size: 24px;
+    color: #2e1808;
+    margin: 0px 20px 30px 20px;
+}
+
 .description-bkg {
     width: 320px;
     height: 240px;
     display: flex;
     align-items: center;
+}
+
+.description-bkg-mobile {
+    width: 320px;
+    align-items: center;
+}
+
+@media only screen and (max-width: 900px) {
+    .highlights {
+        grid-template-columns: 220px;
+        grid-gap: 20px;
+    }
+
+    .updates {
+        display: none;
+    }
+
+    .updates-mobile {
+        display: block;
+    }
 }
 </style>

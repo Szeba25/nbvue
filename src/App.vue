@@ -4,7 +4,7 @@
             <router-link to="/"><h1 class="logo-text">Never Been</h1></router-link>
         </div>
         <div>
-            <hr>
+            <hr class="menu-hr">
             <div class="menu-content">
                 <router-link to="/drawings"><p class="menu-point">Rajzok</p></router-link>
                 <router-link to="/creative"><p class="menu-point">Kreatív</p></router-link>
@@ -32,8 +32,7 @@ html {
 
 body {
     margin: auto;
-    max-width: 1000px;
-    min-width: 820px; /* Switch layout below this value */
+    max-width: 1200px;
     background-color: #f1d7c6;
 }
 
@@ -219,16 +218,26 @@ a {
 }
 
 .menu-point {
-    font-size: 22px;
+    font-size: 26px;
     margin: 6px;
     transition: 0.3s;
     transition-timing-function: ease;
 }
 
 .menu-point:hover {
-    font-size: 24px;
+    font-size: 28px;
     color: #d48545;
     transition: 0.3s;
     transition-timing-function: ease;
+}
+
+@media only screen and (max-width: 900px) {
+    .menu-content {
+        display: none;
+    }
+
+    .menu-hr {
+        display: none;
+    }
 }
 </style>
