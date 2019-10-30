@@ -268,7 +268,7 @@ a {
 
 .mobile-menu-visible-true {
     opacity: 1s;
-    height: 175px;
+    height: 200px;
     transition: 0.8s;
 }
 
