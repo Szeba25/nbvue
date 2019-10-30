@@ -1,21 +1,31 @@
 <template>
-    <div class="main-layout">
-        <div class="logo">
-            <router-link to="/"><h1 class="logo-text">Never Been</h1></router-link>
-        </div>
-        <div>
-            <hr class="menu-hr">
-            <div class="menu-content">
-                <router-link to="/drawings"><p class="menu-point">Rajzok</p></router-link>
-                <router-link to="/creative"><p class="menu-point">Kreatív</p></router-link>
-                <router-link to="/games"><p class="menu-point">Játékok</p></router-link>
-                <router-link to="/stories"><p class="menu-point">Történetek</p></router-link>
-                <router-link to="/recipes"><p class="menu-point">Receptek</p></router-link>
-                <router-link to="/guestbook"><p class="menu-point">Vendégkönyv</p></router-link>
+    <div>
+        <div class="main-layout">
+            <div class="logo">
+                <router-link to="/"><h1 class="logo-text">Never Been</h1></router-link>
             </div>
-            <hr>
+            <div>
+                <hr class="menu-hr">
+                <div class="menu-content">
+                    <router-link to="/drawings"><p class="menu-point">Rajzok</p></router-link>
+                    <router-link to="/creative"><p class="menu-point">Kreatív</p></router-link>
+                    <router-link to="/games"><p class="menu-point">Játékok</p></router-link>
+                    <router-link to="/stories"><p class="menu-point">Történetek</p></router-link>
+                    <router-link to="/recipes"><p class="menu-point">Receptek</p></router-link>
+                    <router-link to="/guestbook"><p class="menu-point">Vendégkönyv</p></router-link>
+                </div>
+                <hr>
+            </div>
+            <router-view class="content"></router-view>
         </div>
-        <router-view class="content"></router-view>
+        <div class="main-layout-mobile">
+            <div class="logo-mobile">
+                <router-link to="/"><h1 class="logo-text-mobile">Never Been</h1></router-link>
+                <img src="@/assets/design/menu.png"/>
+            </div>
+            <hr class="menu-hr">
+            <router-view class="content"></router-view>
+        </div>
     </div>
 </template>
 
@@ -188,16 +198,37 @@ a {
     box-shadow: 0px 0px 25px 5px #35261a93;
 }
 
+.main-layout-mobile {
+    display: none;
+    grid-template-rows: auto auto auto;
+    grid-gap: 0px;
+    padding: 0px;
+    margin: 20px;
+    background-color: #f7eee4;
+
+    border-radius: 10px;
+    box-shadow: 0px 0px 25px 5px #35261a93;
+}
+
 .warning {
     margin: 60px 0px 0px 0px;
 }
 
 .logo {
     display: table;
-    height: 80px;
+    height: 180px;
     overflow: hidden;
     padding: 20px 0px 0px 0px;
     margin: auto;
+}
+
+.logo-mobile {
+    display: grid;
+    grid-template-columns: auto 100px;
+    height: 100px;
+    overflow: hidden;
+    padding: 20px 0px 0px 0px;
+    margin: 0px 20px 0px 20px;
 }
 
 .logo-text {
@@ -205,6 +236,13 @@ a {
     vertical-align: middle;
     text-align: center;
     font-size: 52px;
+}
+
+.logo-text-mobile {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 68px;
 }
 
 .menu-content {
@@ -232,12 +270,12 @@ a {
 }
 
 @media only screen and (max-width: 900px) {
-    .menu-content {
+    .main-layout {
         display: none;
     }
 
-    .menu-hr {
-        display: none;
+    .main-layout-mobile {
+        display: grid;
     }
 }
 </style>
