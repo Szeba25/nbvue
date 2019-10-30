@@ -269,13 +269,13 @@ a {
 .mobile-menu-visible-false {
     opacity: 0;
     height: 0px;
-    transition: 0.6s;
+    transition: 0.3s;
     overflow: hidden;
 }
 
 .mobile-menu-visible-true {
     opacity: 1s;
-    height: 250px;
+    height: 350px;
     transition: 0.6s;
 }
 
@@ -318,14 +318,14 @@ a {
 }
 
 .mobile-menu-point {
-    font-size: 26px;
-    margin: 16px 0px;
+    font-size: 38px;
+    margin: 30px 0px;
     transition: 0.3s;
     transition-timing-function: ease;
 }
 
 .mobile-menu-point:hover {
-    font-size: 28px;
+    font-size: 40px;
     color: #d48545;
     transition: 0.3s;
     transition-timing-function: ease;
