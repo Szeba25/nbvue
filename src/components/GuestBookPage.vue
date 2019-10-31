@@ -38,9 +38,9 @@ export default {
         return {
             top: 10,
             loading: false,
-            moreMessage: "Több üzenet",
+            moreMessage: "Több",
             noMoreMessages: false,
-            posts: [{name:"Sajt", date:"2015-03-02", email:"sajt@sajt.com", rating: 4, message:"asd"}],
+            posts: [{name:"Teszt", date:"2019.04.14 13:32", email:"teszt@teszt.com", rating: 8, message:"Teszt üzenet szövege!"}],
             newPost: {
                 name: "",
                 email: "",
