@@ -81,7 +81,7 @@ export default {
 }
 
 .drawings-back {
-    font-family: "Caveat";
+    font-family: "Courgette";
     text-align: center;
     cursor: pointer;
     text-decoration: underline;

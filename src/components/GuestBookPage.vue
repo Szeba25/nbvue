@@ -11,7 +11,16 @@
             <img class="rating-star" src="@/assets/design/rating/star_off.png" v-for="k in 10-newPost.rating" v-bind:key="k+'B'" v-on:click="setRating(k+(newPost.rating))">
             <p class="line-gb">Üzenet:</p>
             <textarea class="noresize input-gb" rows="8" v-model="newPost.message"></textarea><br>
+            
             <input class="input-space nb-button button-centered" type="button" value="Küldés" v-on:click="post()" v-bind:disabled="loading">
+            <vue-recaptcha class="recaptcha-gb" 
+                ref="invisibleRecaptcha"
+                v-on:verify="onVerify" 
+                v-on:expired="onExpired" 
+                size="invisible"
+                sitekey="6LcwgcAUAAAAAOCyIhcbEKzEgAJSsWV4Ac2MsadN">
+            </vue-recaptcha>
+            
         </div>
         <div class="posts">
             <h2 class="posts-title centered">Bejegyzések</h2>
@@ -30,6 +39,7 @@
 
 <script>
 import Axios from 'axios';
+import VueRecaptcha from 'vue-recaptcha';
 
 export default {
     name: 'GuestBookPage',
@@ -45,7 +55,8 @@ export default {
                 name: "",
                 email: "",
                 rating: 10,
-                message: ""
+                message: "",
+                recaptchaToken: ""
             }
         }
     },
@@ -107,21 +118,36 @@ export default {
 			}
 			return form_data;
         },
-        
-        post() {
+
+        onVerify(recaptchaToken) {
+            this.$refs.invisibleRecaptcha.reset();
+            this.newPost.recaptchaToken = recaptchaToken;
             Axios.post("php/insert.php", this.toFormData(this.newPost)).then((response) => {
                 if (response.data != "SUCCESS") {
-                    alert(response.data);
+                    window.console.log(response.data);
                 } else {
                     this.newPost.name = "";
                     this.newPost.email = "";
                     this.newPost.rating = 10;
                     this.newPost.message = "";
+                    this.newPost.recaptchaToken = "";
                     this.loadNewPosts();
                 }
+                this.loading = false;
             });
+        },
+
+        onExpired() {
+            this.$refs.invisibleRecaptcha.reset();
+        },
+
+        post() {
+            this.$refs.invisibleRecaptcha.execute();
+            this.loading = true;
         }
-    }
+    },
+
+    components: { VueRecaptcha }
 }
 </script>
 
@@ -180,7 +206,7 @@ export default {
 }
 
 .post-text {
-    font-family: "Caveat";
+    font-family: "Courgette";
     font-size: 20px;
     color: #2e1808;
 }
@@ -190,7 +216,7 @@ export default {
 }
 
 .post-main-text {
-    font-family: "Caveat";
+    font-family: "Courgette";
     font-size: 18px;
     color: #2e1808;
 }
@@ -199,8 +225,19 @@ export default {
     margin: 10px 2px;
 }
 
+.recaptcha-container-gb {
+    width: 100%;
+    text-align: center;
+}
+
+.recaptcha-gb {
+    display: inline-block;
+    width: 304px;
+    margin: 20px 0px 0px 0px;
+}
+
 .line-gb {
-    font-family: "Caveat";
+    font-family: "Courgette";
     color: #2e1808;
     font-size: 20px;
     margin: 5px 0px 5px 12px;

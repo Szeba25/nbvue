@@ -61,10 +61,10 @@ export default {
 
 <style>
 @import url('https://fonts.googleapis.com/css?family=Caveat&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Srisakdi&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Courgette&display=swap');
 
 html {
-    overflow-y:scroll;
+    overflow-y: scroll;
 }
 
 body {
@@ -78,27 +78,27 @@ body:after {
 }
 
 h1 {
-    font-family: "Caveat";
+    font-family: "Courgette";
     color: #2e1808;
     font-size: 40px;
 }
 
 h2 {
-    font-family: "Caveat";
+    font-family: "Courgette";
     color: #2e1808;
     font-size: 30px;
     margin: 5px 0px;
 }
 
 h3 {
-    font-family: "Caveat";
+    font-family: "Courgette";
     color: #2e1808;
     font-size: 22px;
     margin: 5px 0px;
 }
 
 p {
-    font-family: "Caveat";
+    font-family: "Courgette";
     color: #2e1808;
     font-size: 16px;
     line-height: 22px;
@@ -159,7 +159,7 @@ a {
 }
 
 .faded-icon-fadein {
-    font-family: "Caveat";
+    font-family: "Courgette";
     font-size: 20px;
     color: #2e1808;
 
@@ -190,7 +190,7 @@ a {
 }
 
 .nb-button {
-    font-family: "Caveat";
+    font-family: "Courgette";
     font-size: 18px;
     color: #2e1808;
     width: 100px;
@@ -297,6 +297,12 @@ a {
     font-size: 52px;
 }
 
+@media only screen and (max-width: 900px) {
+    .logo-text {
+        font-size: 40px;
+    }
+}
+
 .menu-content {
     display: grid;
     grid-template-columns: auto auto auto auto auto auto;
@@ -304,7 +310,13 @@ a {
     padding: 0px;
 
     text-align: center;
-    margin: 0px 120px;
+    margin: 0px 150px;
+}
+
+@media only screen and (max-width: 1100px) {
+    .menu-content {
+        margin: 0px 50px;
+    }
 }
 
 .mobile-menu-content {
