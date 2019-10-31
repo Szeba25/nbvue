@@ -230,4 +230,11 @@ export default {
 .rating-star {
     cursor: pointer;
 }
+
+@media only screen and (max-width: 400px) {
+    .rating-star {
+        width: 24px;
+        height: 24px;
+    }
+}
 </style>
