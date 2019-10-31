@@ -40,7 +40,7 @@ export default {
             loading: false,
             moreMessage: "Több üzenet",
             noMoreMessages: false,
-            posts: [],
+            posts: [{name:"Sajt", date:"2015-03-02", email:"sajt@sajt.com", rating: 4, message:"asd"}],
             newPost: {
                 name: "",
                 email: "",
@@ -139,11 +139,23 @@ export default {
 }
 
 .new-post {
-    margin: 20px auto auto auto;
+    margin: 10px 220px 10px 220px;
+}
+
+@media only screen and (max-width: 900px) {
+    .new-post {
+        margin: 40px 40px 10px 40px;
+    }
 }
 
 .posts {
-    margin: 20px 200px 20px 200px;
+    margin: 10px 200px 10px 200px;
+}
+
+@media only screen and (max-width: 900px) {
+    .posts {
+        margin: 10px;
+    }
 }
 
 .post {
@@ -168,13 +180,13 @@ export default {
 }
 
 .post-text {
-    font-family: "Monotype Corsiva";
+    font-family: "Caveat";
     font-size: 20px;
     color: #2e1808;
 }
 
 .post-main-text {
-    font-family: "Monotype Corsiva";
+    font-family: "Caveat";
     font-size: 18px;
     color: #2e1808;
 }
@@ -184,16 +196,15 @@ export default {
 }
 
 .line-gb {
-    font-family: "Monotype Corsiva";
+    font-family: "Caveat";
     color: #2e1808;
     font-size: 20px;
     margin: 5px 0px 5px 12px;
 }
 
 .input-gb {
-    font-family: Arial;
-    width: 320px;
-    
+    font-family: "Caveat";
+    width: 100%;
     padding: 8px 8px;
     box-sizing: border-box;
     border: 2px solid #ebccb7;

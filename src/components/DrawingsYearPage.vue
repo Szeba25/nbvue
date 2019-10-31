@@ -74,8 +74,14 @@ export default {
     margin: 0px auto 80px auto;
 }
 
+@media only screen and (max-width: 900px) {
+    .drawings-pictures {
+        grid-template-columns: 220px;
+    }
+}
+
 .drawings-back {
-    font-family: "Monotype Corsiva";
+    font-family: "Caveat";
     text-align: center;
     cursor: pointer;
     text-decoration: underline;

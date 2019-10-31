@@ -9,14 +9,6 @@
                 :to="'/drawings/' + yr.year">
             </router-link>
         </div>
-        <div class="drawings-years-mobile">
-            <router-link class="icon-base faded-icon" 
-                v-bind:style="{'background-image': 'url(/'+yr.picture+')'}" 
-                v-for="yr in years" 
-                v-bind:key="yr.id" 
-                :to="'/drawings/' + yr.year">
-            </router-link>
-        </div>
     </div>
 </template>
 
@@ -68,20 +60,12 @@ export default {
     margin: 0px auto 30px auto;
 }
 
-.drawings-years-mobile {
-    display: none;
-    grid-template-columns: 220px;
-    grid-gap: 30px;
-    margin: 0px auto 30px auto;
-}
-
 @media only screen and (max-width: 900px) {
+
     .drawings-years {
-        display: none;
+        grid-template-columns: 220px;
+        grid-gap: 30px;
     }
 
-    .drawings-years-mobile {
-        display: grid;
-    }
 }
 </style>

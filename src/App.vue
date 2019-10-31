@@ -3,6 +3,9 @@
         <div class="main-layout">
             <div class="logo">
                 <router-link to="/"><h1 class="logo-text">Never Been</h1></router-link>
+                <div class="mobile-menu" v-on:click="toggleMobileMenu()">
+                    <img src="@/assets/design/menu.png">
+                </div>
             </div>
             <div>
                 <hr class="menu-hr">
@@ -14,29 +17,18 @@
                     <router-link to="/recipes"><p class="menu-point">Receptek</p></router-link>
                     <router-link to="/guestbook"><p class="menu-point">Vendégkönyv</p></router-link>
                 </div>
-                <hr>
-            </div>
-            <router-view class="content"></router-view>
-        </div>
-        <div class="main-layout-mobile">
-            <div class="logo-mobile">
-                <router-link to="/"><h1 class="logo-text-mobile">Never Been</h1></router-link>
-                <div class="mobile-menu" v-on:click="toggleMobileMenu()">
-                    <img src="@/assets/design/menu.png">
+                <div v-bind:class="'mobile-menu-content mobile-menu-visible-' + mobileMenuVisible">
+                    <div>
+                        <router-link to="/drawings"><p class="mobile-menu-point">Rajzok</p></router-link>
+                        <router-link to="/creative"><p class="mobile-menu-point">Kreatív</p></router-link>
+                        <router-link to="/games"><p class="mobile-menu-point">Játékok</p></router-link>
+                        <router-link to="/stories"><p class="mobile-menu-point">Történetek</p></router-link>
+                        <router-link to="/recipes"><p class="mobile-menu-point">Receptek</p></router-link>
+                        <router-link to="/guestbook"><p class="mobile-menu-point">Vendégkönyv</p></router-link>
+                    </div>
                 </div>
+                <hr class="menu-hr">
             </div>
-            <hr class="menu-hr">
-            <div v-bind:class="'mobile-menu-content mobile-menu-visible-' + mobileMenuVisible">
-                <div>
-                    <router-link to="/drawings"><p class="mobile-menu-point">Rajzok</p></router-link>
-                    <router-link to="/creative"><p class="mobile-menu-point">Kreatív</p></router-link>
-                    <router-link to="/games"><p class="mobile-menu-point">Játékok</p></router-link>
-                    <router-link to="/stories"><p class="mobile-menu-point">Történetek</p></router-link>
-                    <router-link to="/recipes"><p class="mobile-menu-point">Receptek</p></router-link>
-                    <router-link to="/guestbook"><p class="mobile-menu-point">Vendégkönyv</p></router-link>
-                </div>
-            </div>
-            <hr class="menu-hr">
             <router-view class="content"></router-view>
         </div>
     </div>
@@ -67,13 +59,14 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css?family=Caveat&display=swap');
+
 html {
     overflow-y:scroll;
 }
 
 body {
     margin: auto;
-    min-width: 600px;
     max-width: 1200px;
     background-color: #f1d7c6;
 }
@@ -83,27 +76,27 @@ body:after {
 }
 
 h1 {
-    font-family: "Old English Text MT";
+    font-family: "Caveat";
     color: #2e1808;
     font-size: 40px;
 }
 
 h2 {
-    font-family: "Monotype Corsiva";
+    font-family: "Caveat";
     color: #2e1808;
     font-size: 30px;
     margin: 5px 0px;
 }
 
 h3 {
-    font-family: "Monotype Corsiva";
+    font-family: "Caveat";
     color: #2e1808;
     font-size: 22px;
     margin: 5px 0px;
 }
 
 p {
-    font-family: "Monotype Corsiva";
+    font-family: "Caveat";
     color: #2e1808;
     font-size: 16px;
     line-height: 22px;
@@ -158,7 +151,7 @@ a {
 }
 
 .faded-icon-fadein {
-    font-family: "Monotype Corsiva";
+    font-family: "Caveat";
     font-size: 20px;
     color: #2e1808;
 
@@ -181,7 +174,7 @@ a {
 }
 
 .nb-button {
-    font-family: "Monotype Corsiva";
+    font-family: "Caveat";
     font-size: 18px;
     color: #2e1808;
     width: 100px;
@@ -230,16 +223,10 @@ a {
     box-shadow: 0px 0px 25px 5px #35261a93;
 }
 
-.main-layout-mobile {
-    display: none;
-    grid-template-rows: min-content min-content min-content min-content;
-    grid-gap: 0px;
-    padding: 0px;
-    margin: 20px;
-    background-color: #f7eee4;
-
-    border-radius: 10px;
-    box-shadow: 0px 0px 25px 5px #35261a93;
+@media only screen and (max-width: 900px) {
+    .main-layout {
+        grid-template-rows: min-content min-content min-content min-content;
+    }
 }
 
 .warning {
@@ -254,17 +241,22 @@ a {
     margin: auto;
 }
 
-.logo-mobile {
-    display: grid;
-    grid-template-columns: auto 100px;
-    height: 100px;
-    overflow: hidden;
-    padding: 20px 0px 0px 0px;
-    margin: 0px 20px 0px 20px;
+.mobile-menu {
+    display: none;
 }
 
-.mobile-menu-content {
-    text-align: center;
+@media only screen and (max-width: 900px) {
+    .logo {
+        display: grid;
+        grid-template-columns: auto min-content;
+        overflow: hidden;
+        padding: 20px 0px 0px 0px;
+        margin: 0px 10px 0px 10px;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
 }
 
 .mobile-menu-visible-false {
@@ -287,13 +279,6 @@ a {
     font-size: 52px;
 }
 
-.logo-text-mobile {
-    display: table-cell;
-    vertical-align: middle;
-    text-align: center;
-    font-size: 68px;
-}
-
 .menu-content {
     display: grid;
     grid-template-columns: auto auto auto auto auto auto;
@@ -302,6 +287,21 @@ a {
 
     text-align: center;
     margin: 0px 120px;
+}
+
+.mobile-menu-content {
+    display: none;
+    text-align: center;
+}
+
+@media only screen and (max-width: 900px) {
+    .menu-content {
+        display: none;
+    }
+
+    .mobile-menu-content {
+        display: grid;
+    }
 }
 
 .menu-point {
@@ -330,19 +330,5 @@ a {
     color: #d48545;
     transition: 0.3s;
     transition-timing-function: ease;
-}
-
-@media only screen and (max-width: 900px) {
-    .main-layout {
-        display: none;
-    }
-
-    .main-layout-mobile {
-        display: grid;
-    }
-
-    .main-layout-mobile {
-        display: grid;
-    }
 }
 </style>

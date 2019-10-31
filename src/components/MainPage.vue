@@ -158,7 +158,7 @@ export default {
 
 .updates-description {
     width: 280px;
-    font-family: "Monotype Corsiva";
+    font-family: "Caveat";
     font-size: 24px;
     color: #2e1808;
     margin: 0px 20px;
@@ -166,7 +166,7 @@ export default {
 
 .updates-description-mobile {
     width: 280px;
-    font-family: "Monotype Corsiva";
+    font-family: "Caveat";
     font-size: 24px;
     color: #2e1808;
     margin: 0px 20px 30px 20px;
