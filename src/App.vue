@@ -4,7 +4,8 @@
             <div class="logo">
                 <router-link to="/"><h1 class="logo-text">Never Been</h1></router-link>
                 <div class="mobile-menu" v-on:click="toggleMobileMenu()">
-                    <img src="@/assets/design/menu.png">
+                    <img v-if="!mobileMenuVisible" src="@/assets/design/open_menu.png">
+                    <img v-else src="@/assets/design/close_menu.png">
                 </div>
             </div>
             <div>
@@ -60,6 +61,7 @@ export default {
 
 <style>
 @import url('https://fonts.googleapis.com/css?family=Caveat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Srisakdi&display=swap');
 
 html {
     overflow-y:scroll;
@@ -140,7 +142,7 @@ a {
 }
 
 .faded-icon {
-    transition: 0.3s; /* Comment this line out if I die */
+    transition: 0.3s;
     filter: grayscale(75%);
     opacity: 0.8;
 }
@@ -251,7 +253,7 @@ a {
     display: table;
     height: 80px;
     overflow: hidden;
-    padding: 20px 0px 0px 0px;
+    padding: 10px 0px 0px 0px;
     margin: auto;
 }
 
@@ -265,7 +267,7 @@ a {
         grid-template-columns: auto min-content;
         overflow: hidden;
         padding: 20px 0px 0px 0px;
-        margin: 0px 10px 0px 10px;
+        margin: 0px 10px 0px 20px;
     }
 
     .mobile-menu {

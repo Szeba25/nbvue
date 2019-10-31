@@ -203,7 +203,7 @@ export default {
 }
 
 .input-gb {
-    font-family: "Caveat";
+    font-family: "Arial";
     width: 100%;
     padding: 8px 8px;
     box-sizing: border-box;
