@@ -92,6 +92,7 @@ export default {
 
 .drawings-note {
     text-align: center;
+    font-size: 20px;
     margin: 10px 30px 10px 30px;
 }
 </style>

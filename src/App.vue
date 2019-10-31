@@ -150,6 +150,12 @@ a {
     opacity: 1;
 }
 
+@media only screen and (max-width: 900px) {
+    .faded-icon {
+        opacity: 1;
+    }
+}
+
 .faded-icon-fadein {
     font-family: "Caveat";
     font-size: 20px;
@@ -171,6 +177,14 @@ a {
 .faded-icon:hover .faded-icon-fadein {
     opacity: 1;
     margin: 170px 20px 0px 20px;
+}
+
+@media only screen and (max-width: 900px) {
+    .faded-icon-fadein {
+        transition: none;
+        opacity: 1;
+        margin: 170px 20px 0px 20px;
+    }
 }
 
 .nb-button {

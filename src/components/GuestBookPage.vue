@@ -144,7 +144,7 @@ export default {
 
 @media only screen and (max-width: 900px) {
     .new-post {
-        margin: 40px 40px 10px 40px;
+        margin: 10px;
     }
 }
 
