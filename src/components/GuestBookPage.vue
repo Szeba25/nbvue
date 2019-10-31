@@ -40,7 +40,7 @@ export default {
             loading: false,
             moreMessage: "Több",
             noMoreMessages: false,
-            posts: [{name:"Teszt", date:"2019.04.14 13:32", email:"teszt@teszt.com", rating: 8, message:"Teszt üzenet szövege!"}],
+            posts: [],
             newPost: {
                 name: "",
                 email: "",
