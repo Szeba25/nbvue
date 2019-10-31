@@ -14,7 +14,7 @@
             <input class="input-space nb-button button-centered" type="button" value="Küldés" v-on:click="post()" v-bind:disabled="loading">
         </div>
         <div class="posts">
-            <h2 class="centered">Bejegyzések</h2>
+            <h2 class="posts-title centered">Bejegyzések</h2>
             <div v-bind:class="'post' + (index%2+1) + ' post'" v-for="(item, index) in posts" v-bind:key="item.id">
                 <p class="post-text"><b>Név:</b> {{item.name}}</p>
                 <p class="post-text"><b>Dátum:</b> {{item.date}}</p>
@@ -183,6 +183,10 @@ export default {
     font-family: "Caveat";
     font-size: 20px;
     color: #2e1808;
+}
+
+.posts-title {
+    margin: 0px 0px 20px 0px;
 }
 
 .post-main-text {

@@ -222,7 +222,9 @@ a {
 }
 
 .nb-button:disabled {
-    background-color: #757575;
+    background-color: #c4c4c4;
+    border: 2px solid #929292;
+    box-shadow: 0 0 20px #35261a93;
 }
 </style>
 
