@@ -144,18 +144,33 @@ a {
 .faded-icon {
     transition: 0.3s;
     filter: grayscale(75%);
-    opacity: 0.8;
 }
 
 .faded-icon:hover {
     filter: grayscale(0%);
-    opacity: 1;
 }
 
 @media only screen and (max-width: 900px) {
     .faded-icon {
         opacity: 1;
     }
+}
+
+.faded-icon-label {
+    font-family: "Courgette";
+    font-size: 20px;
+    color: #2e1808;
+
+    background-color: #f1d7c698;
+    border-style: solid;
+    border-color: #2e1808;
+    border-width: 0.5px;
+    border-radius: 6px;
+
+    opacity: 1;
+    margin: 170px 20px 0px 20px;
+    transition: none;
+    overflow: hidden;
 }
 
 .faded-icon-fadein {

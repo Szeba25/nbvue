@@ -7,6 +7,7 @@
                 v-for="yr in years" 
                 v-bind:key="yr.id" 
                 :to="'/drawings/' + yr.year">
+                <div class="faded-icon-label centered">{{yr.year}}</div>
             </router-link>
         </div>
     </div>
