@@ -25,6 +25,7 @@
         <div class="posts">
             <h2 class="posts-title centered">Bejegyzések</h2>
             <div v-bind:class="'post' + (index%2+1) + ' post'" v-for="(item, index) in posts" v-bind:key="item.id">
+                <p class="post-text"><b>#:</b> {{item.id}}.</p>
                 <p class="post-text"><b>Név:</b> {{item.name}}</p>
                 <p class="post-text"><b>Dátum:</b> {{item.date}}</p>
                 <p class="post-text"><b>E-mail:</b> {{item.email}}</p>
@@ -221,6 +222,7 @@ export default {
 }
 
 .post-main-text {
+    white-space: pre-wrap;
     font-family: "Courgette";
     font-size: 18px;
     color: #2e1808;
