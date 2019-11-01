@@ -232,11 +232,6 @@ export default {
     margin: 10px 2px;
 }
 
-.recaptcha-container-gb {
-    width: 100%;
-    text-align: center;
-}
-
 .recaptcha-gb {
     display: inline-block;
     width: 304px;
