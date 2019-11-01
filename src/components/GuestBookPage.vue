@@ -47,7 +47,7 @@ export default {
     data() {
         return {
             top: 10,
-            loading: false,
+            loading: true,
             moreMessage: "Több",
             noMoreMessages: false,
             posts: [],
@@ -95,20 +95,25 @@ export default {
                 last = parseInt(this.posts[this.posts.length-1].id);
             }
 
-            Axios.get("php/select_old.php?last=" + last + "&top=" + this.top).then((response) => {
-                let arr = response.data["results"];
-                if (arr.length > 0) {
-                    for (let i = 0; i < arr.length; i++) {
-                        arr.rating = parseInt(arr[i].rating);
-                        this.posts.push(arr[i]);
+            Axios.get("php/select_old.php?last=" + last + "&top=" + this.top)
+                .then((response) => {
+                    let arr = response.data["results"];
+                    if (arr.length > 0) {
+                        for (let i = 0; i < arr.length; i++) {
+                            arr.rating = parseInt(arr[i].rating);
+                            this.posts.push(arr[i]);
+                        }
                     }
-                }
-                if (response.data["end_of_results"]) {
-                    this.moreMessage = "Vége...";
-                    this.noMoreMessages = true;
-                }
-                this.loading = false;
-            });
+                    if (response.data["end_of_results"]) {
+                        this.moreMessage = "Vége...";
+                        this.noMoreMessages = true;
+                    }
+                    this.loading = false;
+                })
+                .catch((error) => {
+                    window.console.log(error);
+                    this.loading = true;
+                });
         },
 
         toFormData(obj) {
