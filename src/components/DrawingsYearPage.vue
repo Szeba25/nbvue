@@ -9,7 +9,7 @@
                         v-bind:style="{'background-image': 'url(/'+pic.picture+')'}">
                     </div>
                 </a>
-                <p class="drawings-note"><span v-html=pic.note></span></p>
+                <p class="drawings-note" v-html="pic.note"></p>
             </div>
         </div>
     </div>
@@ -68,7 +68,6 @@ export default {
 .drawings-pictures {
     display: grid;
     grid-template-columns: 220px 220px;
-    grid-auto-rows: 320px;
     grid-row-gap: 10px;
     grid-column-gap: 50px;
     margin: 0px auto 80px auto;
@@ -91,8 +90,9 @@ export default {
 }
 
 .drawings-note {
+    font-family: "Courgette";
     text-align: center;
-    font-size: 20px;
-    margin: 10px 30px 10px 30px;
+    margin: 15px 5px 10px 5px;
 }
+
 </style>
