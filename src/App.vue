@@ -278,6 +278,13 @@ a {
     height: 150px;
 }
 
+@media only screen and (max-width: 1000px) {
+    .title-image {
+        width: 500px;
+        height: 125px;
+    }
+}
+
 @media only screen and (max-width: 800px) {
     .title-image {
         width: 400px;
