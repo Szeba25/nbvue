@@ -1,8 +1,8 @@
 <template>
     <div>
         <div class="main-layout">
-            <div class="logo">
-                <router-link to="/"><h1 class="logo-text">Never Been</h1></router-link>
+            <div class="title">
+                <router-link to="/"><img class="title-image" src="@/assets/design/title.png"></router-link>
                 <div class="mobile-menu" v-on:click="toggleMobileMenu()">
                     <img v-if="!mobileMenuVisible" src="@/assets/design/open_menu.png">
                     <img v-else src="@/assets/design/close_menu.png">
@@ -266,11 +266,30 @@ a {
     margin: 60px 0px 0px 0px;
 }
 
-.logo {
+.title {
     display: table;
     overflow: hidden;
     padding: 10px 0px 0px 0px;
     margin: 0px auto 10px auto;
+}
+
+.title-image {
+    width: 600px;
+    height: 150px;
+}
+
+@media only screen and (max-width: 800px) {
+    .title-image {
+        width: 400px;
+        height: 100px;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .title-image {
+        width: 300px;
+        height: 75px;
+    }
 }
 
 .mobile-menu {
@@ -278,7 +297,7 @@ a {
 }
 
 @media only screen and (max-width: 800px) {
-    .logo {
+    .title {
         display: grid;
         grid-template-columns: auto min-content;
         overflow: hidden;
@@ -302,19 +321,6 @@ a {
     opacity: 1s;
     height: 230px;
     transition: 0.6s;
-}
-
-.logo-text {
-    display: table-cell;
-    vertical-align: middle;
-    text-align: center;
-    font-size: 52px;
-}
-
-@media only screen and (max-width: 800px) {
-    .logo-text {
-        font-size: 38px;
-    }
 }
 
 .menu-content {
