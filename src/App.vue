@@ -2,7 +2,7 @@
     <div>
         <div class="main-layout">
             <div class="title">
-                <router-link to="/"><img class="title-image" src="@/assets/design/title.png"></router-link>
+                <router-link to="/"><img class="title-image" src="@/assets/design/title2.png"></router-link>
                 <div class="mobile-menu" v-on:click="toggleMobileMenu()">
                     <img v-if="!mobileMenuVisible" src="@/assets/design/open_menu.png">
                     <img v-else src="@/assets/design/close_menu.png">
