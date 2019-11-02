@@ -2,11 +2,11 @@
     <div class="content-gb">
         <div class="new-post">
             <h2 class="centered">Új bejegyzés</h2>
-            <p class="line-gb">Név <span class="error-message">* {{errors.name}}</span></p>
+            <p class="line-gb">Név <span class="error-message">* {{errors.nameError}}</span></p>
             <input class="input-gb" type="text" v-model="newPost.name">
             <p class="line-gb">E-mail</p>
             <input class="input-gb" type="text" v-model="newPost.email">
-            <p class="line-gb">Értékelés <span class="error-message">* {{errors.rating}}</span></p>
+            <p class="line-gb">Értékelés <span class="error-message">* {{errors.ratingError}}</span></p>
             <img class="rating-star" src="@/assets/design/rating/star_on.png" v-for="n in newPost.rating" v-bind:key="n+'A'" v-on:click="setRating(n)">
             <img class="rating-star" src="@/assets/design/rating/star_off.png" v-for="k in 10-newPost.rating" v-bind:key="k+'B'" v-on:click="setRating(k+(newPost.rating))">
             <p class="line-gb">Üzenet</p>
@@ -60,14 +60,28 @@ export default {
                 recaptchaToken: ""
             },
             errors: {
-                name: "",
-                rating: ""
+                nameError: "",
+                ratingError: ""
             }
         }
     },
 
     created() {
         this.loadMorePosts();
+    },
+
+    watch: {
+        'newPost.name'(value) {
+            if (value.length > 0) {
+                this.errors.nameError = "";
+            }
+        },
+
+        'newPost.rating'(value) {
+            if (value > 0) {
+                this.errors.ratingError = "";
+            }
+        }
     },
 
     methods: {
@@ -152,17 +166,16 @@ export default {
         },
 
         post() {
+            let anyError = false;
             if (this.newPost.name.length === 0) {
-                this.errors.name = "< Név megadása kötelező!";
-                setTimeout(() => {
-                    this.errors.name = "";
-                }, 5000);
-            } else if (this.newPost.rating === 0) {
-                this.errors.name = "< Értékelés megadása kötelező!";
-                setTimeout(() => {
-                    this.errors.name = "";
-                }, 5000);
-            } else {
+                this.errors.nameError = "< Név megadása kötelező!";
+                anyError = true;
+            }
+            if (this.newPost.rating === 0) {
+                this.errors.ratingError = "< Értékelés megadása kötelező!";
+                anyError = true;
+            }
+            if (!anyError) {
                 this.$refs.invisibleRecaptcha.execute();
                 this.loading = true;
             }
