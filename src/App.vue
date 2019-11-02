@@ -305,6 +305,13 @@ a {
     }
 }
 
+@media only screen and (max-width: 420px) {
+    .title-image {
+        width: 200px;
+        height: 50px;
+    }
+}
+
 .mobile-menu {
     width: 32px;
     height: 32px;
