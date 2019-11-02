@@ -168,11 +168,11 @@ export default {
         post() {
             let anyError = false;
             if (this.newPost.name.length === 0) {
-                this.errors.nameError = "< Név megadása kötelező!";
+                this.errors.nameError = "Név kötelező!";
                 anyError = true;
             }
             if (this.newPost.rating === 0) {
-                this.errors.ratingError = "< Értékelés megadása kötelező!";
+                this.errors.ratingError = "Értékelés kötelező!";
                 anyError = true;
             }
             if (!anyError) {
