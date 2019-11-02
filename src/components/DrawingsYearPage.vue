@@ -1,6 +1,6 @@
 <template>
     <div class="drawings-pictures-content">
-        <h2 class="drawings-pictures-title centered">{{selectedYear}}. év</h2>
+        <h2 class="drawings-pictures-title centered">{{selectedYear}}</h2>
         <router-link class="drawings-back" to="/drawings">Vissza</router-link>
         <div class="drawings-pictures">
             <div v-for="pic in pictures" v-bind:key="pic.id">

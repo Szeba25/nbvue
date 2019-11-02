@@ -51,7 +51,7 @@ export default {
 }
 
 .drawings-years-title {
-    padding: 30px 0px 10px 0px;
+    padding: 30px 0px 30px 0px;
 }
 
 .drawings-years {

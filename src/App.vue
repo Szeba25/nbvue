@@ -2,10 +2,11 @@
     <div>
         <div class="main-layout">
             <div class="title">
-                <router-link to="/"><img class="title-image" src="@/assets/design/title2.png"></router-link>
-                <div class="mobile-menu" v-on:click="toggleMobileMenu()">
-                    <img v-if="!mobileMenuVisible" src="@/assets/design/open_menu.png">
-                    <img v-else src="@/assets/design/close_menu.png">
+                <router-link to="/"><img class="title-image" v-bind:src="'/titles/title' + titleId + '.png'"></router-link>
+                <div v-bind:class="[{'mobile-menu-change': mobileMenuVisible}, 'mobile-menu']" v-on:click="toggleMobileMenu()">
+                    <div class="mobile-menu-bar1"></div>
+                    <div class="mobile-menu-bar2"></div>
+                    <div class="mobile-menu-bar3"></div>
                 </div>
             </div>
             <div>
@@ -45,8 +46,13 @@ export default {
         }
     },
 
+    created() {
+        this.titleId = Math.floor(Math.random() * 3) + 1;
+    },
+
     data() {
         return {
+            titleId: 1,
             mobileMenuVisible: false
         }
     },
@@ -300,7 +306,30 @@ a {
 }
 
 .mobile-menu {
+    width: 32px;
+    height: 32px;
     display: none;
+    cursor: pointer;
+}
+
+.mobile-menu-bar1, .mobile-menu-bar2, .mobile-menu-bar3 {
+    width: 32px;
+    height: 5px;
+    background-color: #2e1808;
+    margin: 6px 0px;
+    transition: 0.4s;
+}
+
+.mobile-menu-change .mobile-menu-bar1 {
+    transform: translate(0px, 11px) rotate(-45deg);
+}
+
+.mobile-menu-change .mobile-menu-bar2 {
+    opacity: 0;
+}
+
+.mobile-menu-change .mobile-menu-bar3 {
+    transform: translate(0px, -11px) rotate(45deg);
 }
 
 @media only screen and (max-width: 800px) {

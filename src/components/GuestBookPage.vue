@@ -2,14 +2,14 @@
     <div class="content-gb">
         <div class="new-post">
             <h2 class="centered">Új bejegyzés</h2>
-            <p class="line-gb">Név:</p>
+            <p class="line-gb">Név <span class="error-message">* {{errors.name}}</span></p>
             <input class="input-gb" type="text" v-model="newPost.name">
-            <p class="line-gb">E-mail:</p>
+            <p class="line-gb">E-mail</p>
             <input class="input-gb" type="text" v-model="newPost.email">
-            <p class="line-gb">Értékelés:</p>
+            <p class="line-gb">Értékelés <span class="error-message">* {{errors.rating}}</span></p>
             <img class="rating-star" src="@/assets/design/rating/star_on.png" v-for="n in newPost.rating" v-bind:key="n+'A'" v-on:click="setRating(n)">
             <img class="rating-star" src="@/assets/design/rating/star_off.png" v-for="k in 10-newPost.rating" v-bind:key="k+'B'" v-on:click="setRating(k+(newPost.rating))">
-            <p class="line-gb">Üzenet:</p>
+            <p class="line-gb">Üzenet</p>
             <textarea class="noresize input-gb" rows="8" v-model="newPost.message"></textarea><br>
             
             <input class="input-space nb-button button-centered" type="button" value="Küldés" v-on:click="post()" v-bind:disabled="loading">
@@ -55,9 +55,13 @@ export default {
             newPost: {
                 name: "",
                 email: "",
-                rating: 10,
+                rating: 0,
                 message: "",
                 recaptchaToken: ""
+            },
+            errors: {
+                name: "",
+                rating: ""
             }
         }
     },
@@ -134,7 +138,7 @@ export default {
                 } else {
                     this.newPost.name = "";
                     this.newPost.email = "";
-                    this.newPost.rating = 10;
+                    this.newPost.rating = 0;
                     this.newPost.message = "";
                     this.newPost.recaptchaToken = "";
                     this.loadNewPosts();
@@ -148,8 +152,20 @@ export default {
         },
 
         post() {
-            this.$refs.invisibleRecaptcha.execute();
-            this.loading = true;
+            if (this.newPost.name.length === 0) {
+                this.errors.name = "< Név megadása kötelező!";
+                setTimeout(() => {
+                    this.errors.name = "";
+                }, 5000);
+            } else if (this.newPost.rating === 0) {
+                this.errors.name = "< Értékelés megadása kötelező!";
+                setTimeout(() => {
+                    this.errors.name = "";
+                }, 5000);
+            } else {
+                this.$refs.invisibleRecaptcha.execute();
+                this.loading = true;
+            }
         }
     },
 
@@ -264,6 +280,10 @@ export default {
     border: 2px solid #d48545;
     border-radius: 4px;
     box-shadow: 0 0 10px #35261a93;
+}
+
+.error-message {
+    color: #d61616;
 }
 
 .rating-star {
