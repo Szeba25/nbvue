@@ -362,15 +362,15 @@ a {
 }
 
 .menu-point {
-    font-size: 22px;
-    margin: 6px;
+    font-size: 24px;
+    margin: 5px 6px 8px 6px;
     transition: 0.3s;
-    transition-timing-function: ease;
+    transition-timing-function: ease-out;
 }
 
 .menu-point:hover {
-    font-size: 24px;
     color: #d48545;
+    transform: translateY(2px);
     transition: 0.3s;
     transition-timing-function: ease;
 }
@@ -383,8 +383,8 @@ a {
 }
 
 .mobile-menu-point:hover {
-    font-size: 28px;
     color: #d48545;
+    transform: translateX(4px);
     transition: 0.3s;
     transition-timing-function: ease;
 }
