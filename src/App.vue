@@ -150,7 +150,7 @@ a {
     filter: grayscale(0%);
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 800px) {
     .faded-icon {
         opacity: 1;
     }
@@ -196,7 +196,7 @@ a {
     margin: 170px 20px 0px 20px;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 800px) {
     .faded-icon-fadein {
         transition: none;
         opacity: 1;
@@ -256,7 +256,7 @@ a {
     box-shadow: 0px 0px 25px 5px #35261a93;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 800px) {
     .main-layout {
         grid-template-rows: min-content min-content min-content min-content;
     }
@@ -277,7 +277,7 @@ a {
     display: none;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 800px) {
     .logo {
         display: grid;
         grid-template-columns: auto min-content;
@@ -311,7 +311,7 @@ a {
     font-size: 52px;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 800px) {
     .logo-text {
         font-size: 38px;
     }
@@ -327,7 +327,7 @@ a {
     margin: 0px 150px;
 }
 
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: 1000px) {
     .menu-content {
         margin: 0px 50px;
     }
@@ -338,7 +338,7 @@ a {
     text-align: center;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 800px) {
     .menu-content {
         display: none;
     }
@@ -349,14 +349,14 @@ a {
 }
 
 .menu-point {
-    font-size: 26px;
+    font-size: 22px;
     margin: 6px;
     transition: 0.3s;
     transition-timing-function: ease;
 }
 
 .menu-point:hover {
-    font-size: 28px;
+    font-size: 24px;
     color: #d48545;
     transition: 0.3s;
     transition-timing-function: ease;

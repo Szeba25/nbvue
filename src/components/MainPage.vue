@@ -87,7 +87,7 @@ export default {
     margin: 0px auto;
     display: grid;
     grid-template-columns: 220px 220px 220px;
-    grid-gap: 30px;
+    grid-gap: 20px;
     padding: 0px;
 }
 
@@ -184,7 +184,7 @@ export default {
     align-items: center;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 800px) {
     .highlights {
         grid-template-columns: 220px;
         grid-gap: 20px;

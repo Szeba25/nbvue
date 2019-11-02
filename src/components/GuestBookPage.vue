@@ -171,20 +171,20 @@ export default {
 }
 
 .new-post {
-    margin: 10px 220px 10px 220px;
+    margin: 10px 180px 10px 180px;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 800px) {
     .new-post {
         margin: 10px;
     }
 }
 
 .posts {
-    margin: 10px 200px 10px 200px;
+    margin: 10px 160px 10px 160px;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 800px) {
     .posts {
         margin: 10px;
     }

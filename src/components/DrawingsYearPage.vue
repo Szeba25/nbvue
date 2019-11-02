@@ -69,17 +69,17 @@ export default {
     display: grid;
     grid-template-columns: 220px 220px 220px;
     grid-row-gap: 10px;
-    grid-column-gap: 30px;
+    grid-column-gap: 20px;
     margin: 0px auto 80px auto;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 800px) {
     .drawings-pictures {
         grid-template-columns: 220px 220px;
     }
 }
 
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 550px) {
     .drawings-pictures {
         grid-template-columns: 220px;
     }

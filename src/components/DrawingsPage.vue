@@ -57,23 +57,19 @@ export default {
 .drawings-years {
     display: grid;
     grid-template-columns: 220px 220px 220px;
-    grid-gap: 30px;
+    grid-gap: 20px;
     margin: 0px auto 30px auto;
 }
 
-@media only screen and (max-width: 900px) {
-
+@media only screen and (max-width: 800px) {
     .drawings-years {
         grid-template-columns: 220px 220px;
     }
-
 }
 
-@media only screen and (max-width: 600px) {
-
+@media only screen and (max-width: 550px) {
     .drawings-years {
         grid-template-columns: 220px;
     }
-
 }
 </style>
