@@ -268,10 +268,9 @@ a {
 
 .logo {
     display: table;
-    height: 80px;
     overflow: hidden;
     padding: 10px 0px 0px 0px;
-    margin: auto;
+    margin: 0px auto 10px auto;
 }
 
 .mobile-menu {
@@ -284,7 +283,7 @@ a {
         grid-template-columns: auto min-content;
         overflow: hidden;
         padding: 20px 0px 0px 0px;
-        margin: 0px 10px 0px 20px;
+        margin: 0px 10px 10px 20px;
     }
 
     .mobile-menu {
@@ -301,7 +300,7 @@ a {
 
 .mobile-menu-visible-true {
     opacity: 1s;
-    height: 350px;
+    height: 230px;
     transition: 0.6s;
 }
 
@@ -314,7 +313,7 @@ a {
 
 @media only screen and (max-width: 900px) {
     .logo-text {
-        font-size: 40px;
+        font-size: 38px;
     }
 }
 
@@ -364,14 +363,14 @@ a {
 }
 
 .mobile-menu-point {
-    font-size: 38px;
-    margin: 30px 0px;
+    font-size: 26px;
+    margin: 14px 0px;
     transition: 0.3s;
     transition-timing-function: ease;
 }
 
 .mobile-menu-point:hover {
-    font-size: 40px;
+    font-size: 28px;
     color: #d48545;
     transition: 0.3s;
     transition-timing-function: ease;

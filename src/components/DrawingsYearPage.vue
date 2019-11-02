@@ -67,13 +67,19 @@ export default {
 
 .drawings-pictures {
     display: grid;
-    grid-template-columns: 220px 220px;
+    grid-template-columns: 220px 220px 220px;
     grid-row-gap: 10px;
-    grid-column-gap: 50px;
+    grid-column-gap: 30px;
     margin: 0px auto 80px auto;
 }
 
 @media only screen and (max-width: 900px) {
+    .drawings-pictures {
+        grid-template-columns: 220px 220px;
+    }
+}
+
+@media only screen and (max-width: 650px) {
     .drawings-pictures {
         grid-template-columns: 220px;
     }
