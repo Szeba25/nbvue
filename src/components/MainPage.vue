@@ -87,7 +87,7 @@ export default {
     margin: 0px auto;
     display: grid;
     grid-template-columns: 220px 220px 220px;
-    grid-gap: 10px;
+    grid-gap: 30px;
     padding: 0px;
 }
 
