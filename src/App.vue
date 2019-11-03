@@ -76,7 +76,8 @@ html {
 body {
     margin: auto;
     max-width: 1200px;
-    background-color: #f1d7c6;
+    background-image: url("assets/design/bkg.png");
+    background-repeat: repeat;
 }
 
 body:after {

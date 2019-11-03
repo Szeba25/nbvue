@@ -2,28 +2,28 @@
     "message": "1. Kategória",
     "pictures": [
         {
-            "icon": "Drawings_1.png",
-            "picture": "Drawings_1.png",
+            "icon": "Creative_1.png",
+            "picture": "Creative_1.png",
             "note": "Beautiful picture 1"
         },
         {
-            "icon": "Drawings_1.png",
-            "picture": "Drawings_1.png",
+            "icon": "Creative_1.png",
+            "picture": "Creative_1.png",
             "note": "Beautiful picture 2 with a note!"
         },
         {
-            "icon": "Drawings_1.png",
-            "picture": "Drawings_1.png",
+            "icon": "Creative_1.png",
+            "picture": "Creative_1.png",
             "note": "Beautiful picture 3 with a very very long note! And more text! and more text! and more! and more!"
         },
         {
-            "icon": "Drawings_1.png",
-            "picture": "Drawings_1.png",
+            "icon": "Creative_1.png",
+            "picture": "Creative_1.png",
             "note": "Beautiful picture 4 with a very very long note!"
         },
         {
-            "icon": "Drawings_1.png",
-            "picture": "Drawings_1.png",
+            "icon": "Creative_1.png",
+            "picture": "Creative_1.png",
             "note": "Beautiful picture 4 with a very very long note!"
         }
     ]
