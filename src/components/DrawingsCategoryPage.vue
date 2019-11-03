@@ -1,15 +1,15 @@
 <template>
     <div class="drawings-pictures-content">
-        <h2 class="drawings-pictures-title centered">{{selectedYear}}</h2>
-        <router-link class="drawings-back" to="/drawings">Vissza</router-link>
+        <h2 class="drawings-pictures-title centered">{{message}}</h2>
+        <p class="drawings-back" v-on:click="back()">Vissza</p>
         <div class="drawings-pictures">
             <div v-for="pic in pictures" v-bind:key="pic.id">
                 <a v-bind:href=pic.picture target="_blank">
                     <div class="icon-base faded-icon" 
-                        v-bind:style="{'background-image': 'url(/'+pic.picture+')'}">
+                        v-bind:style="{'background-image': 'url(/'+pic.icon+')'}">
                     </div>
                 </a>
-                <p class="drawings-note" v-html="pic.note"></p>
+                <p class="drawings-pictures-note" v-html="pic.note"></p>
             </div>
         </div>
     </div>
@@ -19,37 +19,43 @@
 import Axios from 'axios';
 
 export default {
-    name: "DrawingsYearPage",
+    name: "DrawingsCategoryPage",
 
     data() {
         return {
-            selectedYear: "",
+            selectedCategory: "",
+            message: "",
             pictures: []
         }
     },
 
     created() {
-        this.selectYear(this.$route.params.year);
+        this.selectCategory(this.$route.params.category);
     },
 
     watch: {
-        '$route.params.year'(year) {
-            this.selectYear(year);
+        '$route.params.category'(category) {
+            this.selectCategory(category);
         }
     },
 
     methods: {
-        selectYear(year) {
-            this.selectedYear = year;
+        selectCategory(category) {
+            this.selectedCategory = category;
+            this.message = "";
             this.pictures = [];
-            Axios.get('/drawings_page/year_' + this.selectedYear + '.json').then((response) => {
-                for (let i = 0; i < response.data.length; i++) {
-                    this.pictures.push(response.data[i]);
+            Axios.get('/drawings_page/category_' + this.selectedCategory + '.json').then((response) => {
+                this.message = response.data.message;
+                for (let i = 0; i < response.data.pictures.length; i++) {
+                    this.pictures.push(response.data.pictures[i]);
                 }
             });
+        },
+
+        back() {
+            this.$router.go(-1);
         }
     }
-    
 }
 </script>
 
@@ -95,10 +101,9 @@ export default {
     margin: 5px 0px 22px 0px;
 }
 
-.drawings-note {
+.drawings-pictures-note {
     font-family: "Courgette";
     text-align: center;
     margin: 15px 5px 10px 5px;
 }
-
 </style>

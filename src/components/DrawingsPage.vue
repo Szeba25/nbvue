@@ -1,13 +1,13 @@
 <template>
-    <div class="drawings-years-content">
-        <h2 class="drawings-years-title centered">Válassz évet!</h2>
-        <div class="drawings-years">
+    <div class="drawings-content">
+        <h2 class="drawings-title centered">{{message}}</h2>
+        <div class="drawings">
             <router-link class="icon-base faded-icon" 
-                v-bind:style="{'background-image': 'url(/'+yr.picture+')'}" 
-                v-for="yr in years" 
-                v-bind:key="yr.id" 
-                :to="'/drawings/' + yr.year">
-                <div class="faded-icon-label centered">{{yr.year}}</div>
+                v-bind:style="{'background-image': 'url(/'+category.icon+')'}" 
+                v-for="category in categories" 
+                v-bind:key="category.id" 
+                :to="'/drawings/' + category.page">
+                <div class="faded-icon-label centered">{{category.label}}</div>
             </router-link>
         </div>
     </div>
@@ -21,40 +21,43 @@ export default {
 
     data() {
         return {
-            years: []
+            message: "",
+            categories: []
         }
     },
 
     created() {
-        this.loadYears();
+        this.loadCategories();
     },
 
     methods: {
-        loadYears() {
-            this.years = [];
-            Axios.get('/drawings_page/years.json').then((response) => {
-                for (let i = 0; i < response.data.length; i++) {
-                    this.years.push(response.data[i]);
+        loadCategories() {
+            this.message = "";
+            this.categories = [];
+            Axios.get('/drawings_page/categories.json').then((response) => {
+                this.message = response.data.message;
+                for (let i = 0; i < response.data.categories.length; i++) {
+                    this.categories.push(response.data.categories[i]);
                 }
             });
         }
     }
-};
+}
 </script>
 
 <style scoped>
-.drawings-years-content {
+.drawings-content {
     display: grid;
     grid-template-rows: min-content min-content;
     grid-gap: 0px;
     padding: 0px;
 }
 
-.drawings-years-title {
+.drawings-title {
     padding: 30px 0px 30px 0px;
 }
 
-.drawings-years {
+.drawings {
     display: grid;
     grid-template-columns: 220px 220px 220px;
     grid-gap: 20px;
@@ -62,13 +65,13 @@ export default {
 }
 
 @media only screen and (max-width: 800px) {
-    .drawings-years {
+    .drawings {
         grid-template-columns: 220px 220px;
     }
 }
 
 @media only screen and (max-width: 550px) {
-    .drawings-years {
+    .drawings {
         grid-template-columns: 220px;
     }
 }
