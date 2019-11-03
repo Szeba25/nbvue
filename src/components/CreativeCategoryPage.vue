@@ -1,15 +1,15 @@
 <template>
-    <div class="drawings-pictures-content">
-        <p class="drawings-back" v-on:click="back()">Vissza</p>
-        <h2 class="drawings-pictures-title centered">{{message}}</h2>
-        <div class="drawings-pictures">
+    <div class="creative-pictures-content">
+        <p class="creative-back" v-on:click="back()">Vissza</p>
+        <h2 class="creative-pictures-title centered">{{message}}</h2>
+        <div class="creative-pictures">
             <div v-for="pic in pictures" v-bind:key="pic.id">
-                <a v-bind:href="'drawings_page/' + pic.picture" target="_blank">
+                <a v-bind:href="'creative_page/' + pic.picture" target="_blank">
                     <div class="icon-base faded-icon" 
-                        v-bind:style="{'background-image': 'url(/drawings_page/'+pic.icon+')'}">
+                        v-bind:style="{'background-image': 'url(/creative_page/'+pic.icon+')'}">
                     </div>
                 </a>
-                <p class="drawings-pictures-note" v-html="pic.note"></p>
+                <p class="creative-pictures-note" v-html="pic.note"></p>
             </div>
         </div>
     </div>
@@ -19,7 +19,7 @@
 import Axios from 'axios';
 
 export default {
-    name: "DrawingsCategoryPage",
+    name: "CreativeCategoryPage",
 
     data() {
         return {
@@ -44,7 +44,7 @@ export default {
             this.selectedCategory = category;
             this.message = "";
             this.pictures = [];
-            Axios.get('/drawings_page/category_' + this.selectedCategory + '.json').then((response) => {
+            Axios.get('/creative_page/category_' + this.selectedCategory + '.json').then((response) => {
                 this.message = response.data.message;
                 for (let i = 0; i < response.data.pictures.length; i++) {
                     this.pictures.push(response.data.pictures[i]);
@@ -60,19 +60,19 @@ export default {
 </script>
 
 <style scoped>
-.drawings-pictures-content {
+.creative-pictures-content {
     display: grid;
     grid-template-rows: min-content min-content min-content;
     grid-gap: 0px;
     padding: 0px;
 }
 
-.drawings-pictures-title {
+.creative-pictures-title {
     padding: 10px 0px 10px 0px;
     margin: 0px auto 20px auto;
 }
 
-.drawings-pictures {
+.creative-pictures {
     display: grid;
     grid-template-columns: 220px 220px 220px;
     grid-row-gap: 10px;
@@ -81,18 +81,18 @@ export default {
 }
 
 @media only screen and (max-width: 800px) {
-    .drawings-pictures {
+    .creative-pictures {
         grid-template-columns: 220px 220px;
     }
 }
 
 @media only screen and (max-width: 550px) {
-    .drawings-pictures {
+    .creative-pictures {
         grid-template-columns: 220px;
     }
 }
 
-.drawings-back {
+.creative-back {
     font-family: "Courgette";
     text-align: center;
     cursor: pointer;
@@ -102,7 +102,7 @@ export default {
     margin: 25px 0px 15px 0px;
 }
 
-.drawings-pictures-note {
+.creative-pictures-note {
     font-family: "Courgette";
     text-align: center;
     margin: 15px 5px 10px 5px;

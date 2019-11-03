@@ -1,0 +1,15 @@
+{
+	"message": "Válassz kategóriát!",
+	"categories" :[
+		{
+			"icon": "Drawings_1.png",
+			"label": "1. Kategória",
+			"page": "cat1"
+		},
+		{
+			"icon": "Drawings_2.png",
+			"label": "2. Kategória",
+			"page": "cat2"
+		}
+	]
+}

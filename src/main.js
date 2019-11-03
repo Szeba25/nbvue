@@ -5,6 +5,8 @@ import VueRouter from 'vue-router';
 import MainPage from './components/MainPage.vue';
 import DrawingsPage from './components/DrawingsPage.vue';
 import DrawingsCategoryPage from './components/DrawingsCategoryPage.vue';
+import CreativePage from './components/CreativePage.vue';
+import CreativeCategoryPage from './components/CreativeCategoryPage.vue';
 import GamesPage from './components/GamesPage.vue';
 import StoriesPage from './components/StoriesPage.vue';
 import RecipesPage from './components/RecipesPage.vue';
@@ -18,8 +20,8 @@ const routes = [
     { path: '/', components: { default: MainPage } },
     { path: '/drawings', components: { default: DrawingsPage } },
     { path: '/drawings/:category', components: { default: DrawingsCategoryPage } },
-    /*{ path: '/creative', components: { default: CategoriesPage } },
-    { path: '/creative/:category', components: { default: CategoryPage } },*/
+    { path: '/creative', components: { default: CreativePage } },
+    { path: '/creative/:category', components: { default: CreativeCategoryPage } },
     { path: '/games', components: { default: GamesPage } },
     { path: '/stories', components: { default: StoriesPage } },
     { path: '/recipes', components: { default: RecipesPage } },

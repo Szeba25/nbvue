@@ -1,5 +1,5 @@
 {
-    "message": "2019. év",
+    "message": "1. Kategória",
     "pictures": [
         {
             "icon": "Drawings_1.png",
@@ -7,8 +7,8 @@
             "note": "Beautiful picture 1"
         },
         {
-            "icon": "Drawings_2.png",
-            "picture": "Drawings_2.png",
+            "icon": "Drawings_1.png",
+            "picture": "Drawings_1.png",
             "note": "Beautiful picture 2 with a note!"
         },
         {

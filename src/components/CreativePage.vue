@@ -1,12 +1,12 @@
 <template>
-    <div class="drawings-content">
-        <h2 class="drawings-title centered">{{message}}</h2>
-        <div class="drawings">
+    <div class="creative-content">
+        <h2 class="creative-title centered">{{message}}</h2>
+        <div class="creative">
             <router-link class="icon-base faded-icon" 
-                v-bind:style="{'background-image': 'url(/drawings_page/'+category.icon+')'}" 
+                v-bind:style="{'background-image': 'url(/creative_page/'+category.icon+')'}" 
                 v-for="category in categories" 
                 v-bind:key="category.id" 
-                :to="'/drawings/' + category.page">
+                :to="'/creative/' + category.page">
                 <div class="faded-icon-label centered">{{category.label}}</div>
             </router-link>
         </div>
@@ -17,7 +17,7 @@
 import Axios from 'axios';
 
 export default {
-    name: 'DrawingsPage',
+    name: 'CreativePage',
 
     data() {
         return {
@@ -34,7 +34,7 @@ export default {
         loadCategories() {
             this.message = "";
             this.categories = [];
-            Axios.get('/drawings_page/categories.json').then((response) => {
+            Axios.get('/creative_page/categories.json').then((response) => {
                 this.message = response.data.message;
                 for (let i = 0; i < response.data.categories.length; i++) {
                     this.categories.push(response.data.categories[i]);
@@ -46,18 +46,18 @@ export default {
 </script>
 
 <style scoped>
-.drawings-content {
+.creative-content {
     display: grid;
     grid-template-rows: min-content min-content;
     grid-gap: 0px;
     padding: 0px;
 }
 
-.drawings-title {
+.creative-title {
     padding: 30px 0px 30px 0px;
 }
 
-.drawings {
+.creative {
     display: grid;
     grid-template-columns: 220px 220px 220px;
     grid-gap: 20px;
@@ -65,13 +65,13 @@ export default {
 }
 
 @media only screen and (max-width: 800px) {
-    .drawings {
+    .creative {
         grid-template-columns: 220px 220px;
     }
 }
 
 @media only screen and (max-width: 550px) {
-    .drawings {
+    .creative {
         grid-template-columns: 220px;
     }
 }
