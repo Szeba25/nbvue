@@ -24,14 +24,14 @@
             <div v-for="(item, index) in updates" v-bind:key="item.id">
                 <div v-if="index % 2 == 0" class="updates-div">
                     <router-link v-bind:to=item.link>
-                        <img class="updates-picture" v-bind:src=item.picture width=318px height=238px>
+                        <img class="updates-picture" v-bind:src="'/main_page/' + item.picture" width=320px height=240px>
                     </router-link>
                     <div class="description-bkg"><div class="updates-description">{{item.description}}</div></div>
                 </div>
                 <div v-else class="updates-div">
                     <div class="description-bkg"><div class="updates-description">{{item.description}}</div></div>
                    <router-link v-bind:to=item.link>
-                        <img class="updates-picture" v-bind:src=item.picture width=318px height=238px>
+                        <img class="updates-picture" v-bind:src="'/main_page/' + item.picture" width=320px height=240px>
                     </router-link>
                 </div>
             </div>
@@ -40,7 +40,7 @@
             <div v-for="item in updates" v-bind:key="item.id">
                 <div class="updates-div-mobile">
                     <router-link v-bind:to=item.link>
-                        <img class="updates-picture" v-bind:src=item.picture width=318px height=238px>
+                        <img class="updates-picture" v-bind:src="'/main_page/' + item.picture" width=320px height=240px>
                     </router-link>
                     <div class="description-bkg-mobile"><div class="updates-description-mobile">{{item.description}}</div></div>
                 </div>
@@ -123,7 +123,7 @@ export default {
 
 .updates-div {
     display: grid;
-    grid-template-columns: 320px 320px;
+    grid-template-columns: 322px 322px;
     grid-gap: 20px;
     align-items: center;
     text-align: center;
@@ -132,7 +132,7 @@ export default {
 
 .updates-div-mobile {
     display: grid;
-    grid-template-columns: 320px;
+    grid-template-columns: 322px;
     grid-gap: 25px;
     align-items: center;
     text-align: center;
