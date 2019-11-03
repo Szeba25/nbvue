@@ -62,7 +62,7 @@ export default {
     },
 
     created() {
-        Axios.get('/main_page/highlights.json').then((response) => {
+        Axios.get('/main_page/updates.json').then((response) => {
             for (let i = 0; i < response.data.length; i++) {
                 this.updates.push(response.data[i]);
             }
@@ -149,6 +149,13 @@ export default {
     filter: grayscale(75%);
     opacity: 0.8;
     transition: 0.3s;
+}
+
+@media only screen and (max-width: 400px) {
+    .updates-picture {
+        width: 240px;
+        height: 180px;
+    }
 }
 
 .updates-picture:hover {
