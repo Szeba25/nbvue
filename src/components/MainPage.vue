@@ -151,6 +151,13 @@ export default {
     transition: 0.3s;
 }
 
+@media only screen and (max-width: 800px) {
+    .updates-picture {
+        filter: grayscale(0%);
+        opacity: 1;
+    }
+}
+
 @media only screen and (max-width: 400px) {
     .updates-picture {
         width: 240px;

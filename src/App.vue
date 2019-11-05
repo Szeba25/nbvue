@@ -135,7 +135,7 @@ a {
 .icon-base {
     width: 200px;
     height: 200px;
-    margin: 0px 10px;
+    margin: 0px 9px;
     cursor: pointer;
     
     background-size: cover;
@@ -159,6 +159,7 @@ a {
 
 @media only screen and (max-width: 800px) {
     .faded-icon {
+        filter: grayscale(0%);
         opacity: 1;
     }
 }

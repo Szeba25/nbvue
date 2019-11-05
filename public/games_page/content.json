@@ -1,0 +1,24 @@
+[
+    {
+        "title": "Never Been",
+        "description": "Teszt leírás a játékhoz!<br>Több soros!",
+        "mainImage": "GameLogo.png",
+        "additional": [
+            {"icon": "Additional.png", "picture": "Additional.png", "note": "TestNote 1"},
+            {"icon": "Additional.png", "picture": "Additional.png", "note": "TestNote 2"},
+            {"icon": "Additional.png", "picture": "Additional.png", "note": "TestNote 3"}
+        ]
+    },
+    {
+        "title": "Bömbgame",
+        "description": "Teszt leírás a játékhoz!<br>Több soros!<br>És még hosszabb!",
+        "mainImage": "GameLogo.png",
+        "additional": [
+            {"icon": "Additional.png", "picture": "Additional.png", "note": "Long test note with a break!<br>Asd"},
+            {"icon": "Additional.png", "picture": "Additional.png", "note": "TestNote 4"},
+            {"icon": "Additional.png", "picture": "Additional.png", "note": "TestNote 5"},
+            {"icon": "Additional.png", "picture": "Additional.png", "note": "TestNote 6"},
+            {"icon": "Additional.png", "picture": "Additional.png", "note": "TestNote 7"}
+        ]
+    }
+]
