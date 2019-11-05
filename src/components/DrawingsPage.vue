@@ -34,7 +34,7 @@ export default {
         loadCategories() {
             this.message = "";
             this.categories = [];
-            Axios.get('/drawings_page/categories.json').then((response) => {
+            Axios.get('/drawings_page/categories.json?_=' + new Date().getTime()).then((response) => {
                 this.message = response.data.message;
                 for (let i = 0; i < response.data.categories.length; i++) {
                     this.categories.push(response.data.categories[i]);

@@ -44,7 +44,7 @@ export default {
             this.selectedCategory = category;
             this.message = "";
             this.pictures = [];
-            Axios.get('/drawings_page/category_' + this.selectedCategory + '.json').then((response) => {
+            Axios.get('/drawings_page/category_' + this.selectedCategory + '.json?_=' + new Date().getTime()).then((response) => {
                 this.message = response.data.message;
                 for (let i = 0; i < response.data.pictures.length; i++) {
                     this.pictures.push(response.data.pictures[i]);

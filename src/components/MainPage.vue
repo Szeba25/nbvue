@@ -62,7 +62,7 @@ export default {
     },
 
     created() {
-        Axios.get('/main_page/updates.json').then((response) => {
+        Axios.get('/main_page/updates.json?_=' + new Date().getTime()).then((response) => {
             for (let i = 0; i < response.data.length; i++) {
                 this.updates.push(response.data[i]);
             }
