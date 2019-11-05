@@ -59,8 +59,8 @@ export default {
     border-width: 0.5px;
     border-radius: 8px;
 
-    padding: 15px 15px 15px 15px;
-    margin: 20px 20px;
+    padding: 15px 5px 5px 5px;
+    margin: 15px 15px;
     width: auto;
 
     box-shadow: 0px 0px 10px 5px #35261a41;
@@ -80,7 +80,8 @@ export default {
 
 .game-main {
     display: grid;
-    grid-template-columns: 400px auto;
+    margin: 0px 20px 0px 180px;
+    grid-template-columns: 322px auto;
 }
 
 .game-main-img {
@@ -92,17 +93,22 @@ export default {
     box-shadow: 0px 0px 15px 3px #35261a93;
 }
 
+@media only screen and (max-width: 1000px) {
+    .game-main {
+        margin: 0px 20px 0px 60px;
+    }
+}
+
 @media only screen and (max-width: 800px) {
     .game-main {
         grid-template-columns: auto;
         text-align: center;
+        margin: auto;
     }
 
     .game-main-img {
         display: block;
         margin: auto;
-        width: 320px;
-        height: 240px;
     }
 }
 
@@ -126,16 +132,15 @@ export default {
 
 .game-text {
     margin: 20px;
+    text-align: center;
 }
 
-/*
 .game-title {
-
+    font-size: 34px;
 }
-*/
 
 .game-description {
-    text-align: justify;
+    text-align: center;
 }
 
 .game-other {
@@ -152,7 +157,7 @@ export default {
     }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 550px) {
     .game-other {
         grid-template-columns: 220px;
     }
