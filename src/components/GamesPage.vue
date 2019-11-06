@@ -80,36 +80,20 @@ export default {
 
 .game-main {
     display: grid;
-    margin: 0px 20px 0px 180px;
-    grid-template-columns: 322px auto;
+    margin: 0px 20px 0px 20px;
+    grid-template-columns: auto;
+    text-align: center;
+    margin: auto;
 }
 
 .game-main-img {
-    display: grid;
+    display: block;
+    margin: auto;
     border-style: solid;
     border-color: #2e1808;
     border-width: 1px;
     border-radius: 15px;
     box-shadow: 0px 0px 15px 3px #35261a93;
-}
-
-@media only screen and (max-width: 1000px) {
-    .game-main {
-        margin: 0px 20px 0px 60px;
-    }
-}
-
-@media only screen and (max-width: 800px) {
-    .game-main {
-        grid-template-columns: auto;
-        text-align: center;
-        margin: auto;
-    }
-
-    .game-main-img {
-        display: block;
-        margin: auto;
-    }
 }
 
 @media only screen and (max-width: 550px) {
