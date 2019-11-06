@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="game-content">
         <div v-bind:class="'game game' + (index%2+1)" v-for="(game, index) in games" v-bind:key="'G'+index">
             <div class="game-main">
                 <img class="game-main-img" v-bind:src="'games_page/' + game.mainImage">
@@ -53,6 +53,10 @@ export default {
 </script>
 
 <style scoped>
+.game-content {
+    margin: 20px 0px 0px 0px;
+}
+
 .game {
     border-style: solid;
     border-color: #2e1808;
@@ -60,14 +64,26 @@ export default {
     border-radius: 8px;
 
     padding: 15px 5px 5px 5px;
-    margin: 15px 15px;
+    margin: 0px 50px 30px 50px;
     width: auto;
 
-    box-shadow: 0px 0px 10px 5px #35261a41;
+    box-shadow: 0px 0px 15px 5px #35261a41;
 
     display: grid;
     grid-template-rows: auto auto auto;
     grid-gap: 10px;
+}
+
+@media only screen and (max-width: 1000px) {
+    .game {
+        margin: 0px 20px 10px 20px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .game {
+        margin: 0px 10px 10px 10px;
+    }
 }
 
 .game1 {

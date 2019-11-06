@@ -1,7 +1,7 @@
 [
     {
         "title": "Never Been",
-        "description": "Teszt leírás a játékhoz!<br>Több soros!",
+        "description": "Teszt leírás a játékhoz!<br>Több soros!<br>Hosszú sor! ................. ............. .............. ............... ............. ......... ......... Hosszú paragrafus Hosszú paragrafus Hosszú paragrafus Hosszú paragrafus Hosszú paragrafus Hosszú paragrafus Hosszú paragrafus",
         "mainImage": "GameLogo.png",
         "additional": [
             {"icon": "Additional.png", "picture": "Additional.png", "note": "TestNote 1"},

@@ -55,6 +55,7 @@ export default {
 
 .drawings-title {
     padding: 30px 0px 30px 0px;
+    margin: 0px 30px;
 }
 
 .drawings {
