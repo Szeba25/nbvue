@@ -1,6 +1,6 @@
 <template>
     <div class="drawings-pictures-content">
-        <p class="drawings-back" v-on:click="back()">Vissza</p>
+        <img src="@/assets/design/back_button.png" class="drawings-back" v-on:click="back()">
         <h2 class="drawings-pictures-title centered">{{message}}</h2>
         <div class="drawings-pictures">
             <div v-for="pic in pictures" v-bind:key="pic.id">
@@ -93,13 +93,8 @@ export default {
 }
 
 .drawings-back {
-    font-family: "Courgette";
-    text-align: center;
     cursor: pointer;
-    text-decoration: underline;
-    color: #2e1808;
-    font-size: 24px;
-    margin: 25px 0px 15px 0px;
+    margin: 25px auto 15px auto;
 }
 
 .drawings-pictures-note {
