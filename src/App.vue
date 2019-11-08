@@ -240,11 +240,11 @@ a:visited {
 
 .nb-button:hover {
     cursor: pointer;
+    border: 2px solid #d48545;
 }
 
 .nb-button:focus {
     outline: none;
-    border: 2px solid #d48545;
     border-radius: 8px;
     box-shadow: 0 0 8px #35261a93;
 }
@@ -254,6 +254,26 @@ a:visited {
     background-color: #c4c4c4;
     border: 2px solid #929292;
     box-shadow: 0 0 8px #35261a93;
+}
+
+.main-back {
+    cursor: pointer;
+    text-align: center;
+    font-size: 28px;
+    margin: 25px auto 25px auto;
+    transition: 0.3s;
+    transition-timing-function: ease-out;
+
+    padding: 10px;
+    border: 2px solid #ebccb7;
+    border-radius: 8px;
+}
+
+.main-back:hover {
+    color: #d48545;
+    transform: translateY(3px);
+    transition: 0.3s;
+    transition-timing-function: ease;
 }
 </style>
 

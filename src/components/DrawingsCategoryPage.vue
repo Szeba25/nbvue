@@ -1,6 +1,6 @@
 <template>
     <div class="drawings-pictures-content">
-        <img src="@/assets/design/back_button.png" class="drawings-back" v-on:click="back()">
+        <p class="main-back" v-on:click="back()">Vissza</p>
         <h2 class="drawings-pictures-title centered">{{message}}</h2>
         <div class="drawings-pictures">
             <div v-for="pic in pictures" v-bind:key="pic.id">
@@ -90,11 +90,6 @@ export default {
     .drawings-pictures {
         grid-template-columns: 220px;
     }
-}
-
-.drawings-back {
-    cursor: pointer;
-    margin: 25px auto 15px auto;
 }
 
 .drawings-pictures-note {

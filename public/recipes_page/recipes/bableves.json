@@ -26,8 +26,12 @@
             "data": "Alcím!"
         },
         {
-            "type": "p",
-            "data": "Tálaljuk!"
+            "type": "p_justify",
+            "data": "Tálaljuk! Hosszú szöveg asd dsa Hosszú szöveg asd dsa Hosszú szöveg asd dsa Hosszú szöveg asd dsa Hosszú szöveg asd dsa Hosszú szöveg asd dsa Hosszú szöveg asd dsa Hosszú szöveg asd dsa Hosszú szöveg asd dsa Hosszú szöveg asd dsa Hosszú szöveg asd dsa Hosszú szöveg asd dsa Hosszú szöveg asd dsa Hosszú szöveg asd dsa Hosszú szöveg asd dsa Hosszú szöveg asd dsa Hosszú szöveg asd dsa Hosszú szöveg asd dsa Hosszú szöveg asd dsa Hosszú szöveg asd dsa Hosszú szöveg asd dsa Hosszú szöveg asd dsa Hosszú szöveg asd dsa Hosszú szöveg asd dsa Hosszú szöveg asd dsa Hosszú szöveg asd dsa Hosszú szöveg asd dsa"
+        },
+        {
+            "type": "spacing",
+            "data": "50px"
         },
         {
             "type": "p",
