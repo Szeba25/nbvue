@@ -120,6 +120,12 @@ hr {
 }
 
 a {
+    color: #d48545;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #d48545;
     text-decoration: none;
 }
 

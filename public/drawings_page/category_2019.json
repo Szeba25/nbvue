@@ -4,7 +4,7 @@
         {
             "icon": "Drawings_1.png",
             "picture": "Drawings_1.png",
-            "note": "Beautiful picture 1"
+            "note": "Beautiful picture 1<br><a href='https://youtube.com' target='_blank'>Link Test</a>"
         },
         {
             "icon": "Drawings_2.png",

@@ -10,6 +10,7 @@ import CreativeCategoryPage from './components/CreativeCategoryPage.vue';
 import GamesPage from './components/GamesPage.vue';
 import StoriesPage from './components/StoriesPage.vue';
 import RecipesPage from './components/RecipesPage.vue';
+import RecipePage from './components/RecipePage.vue';
 import GuestBookPage from './components/GuestBookPage.vue';
 
 Vue.use(VueRouter);
@@ -25,6 +26,7 @@ const routes = [
     { path: '/games', components: { default: GamesPage } },
     { path: '/stories', components: { default: StoriesPage } },
     { path: '/recipes', components: { default: RecipesPage } },
+    { path: '/recipes/:recipe', components: { default: RecipePage } },
     { path: '/guestbook', components: { default: GuestBookPage } }
 ];
 
