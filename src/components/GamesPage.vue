@@ -54,7 +54,7 @@ export default {
 
 <style scoped>
 .game-content {
-    margin: 20px 0px 0px 0px;
+    margin: 50px 0px 0px 0px;
 }
 
 .game {
@@ -64,23 +64,31 @@ export default {
     border-radius: 8px;
 
     padding: 15px 5px 5px 5px;
-    margin: 0px 50px 30px 50px;
+    margin: 0px 50px 50px 50px;
     width: auto;
 
     box-shadow: 0px 0px 15px 5px #35261a41;
 
     display: grid;
     grid-template-rows: auto auto auto;
-    grid-gap: 10px;
+    grid-gap: 15px;
 }
 
 @media only screen and (max-width: 1000px) {
+    .game-content {
+        margin: 20px 0px 0px 0px
+    }
+
     .game {
-        margin: 0px 20px 10px 20px;
+        margin: 0px 20px 20px 20px;
     }
 }
 
 @media only screen and (max-width: 800px) {
+    .game-content {
+        margin: 10px 0px 0px 0px
+    }
+
     .game {
         margin: 0px 10px 10px 10px;
     }
@@ -118,15 +126,6 @@ export default {
         margin: auto;
         width: 240px;
         height: 180px;
-    }
-}
-
-@media only screen and (max-width: 420px) {
-    .game-main-img {
-        display: block;
-        margin: auto;
-        width: 200px;
-        height: 150px;
     }
 }
 
