@@ -239,7 +239,6 @@ a:visited {
 }
 
 .nb-button:hover {
-    background-color: #d48545;
     cursor: pointer;
 }
 
@@ -247,13 +246,14 @@ a:visited {
     outline: none;
     border: 2px solid #d48545;
     border-radius: 8px;
-    box-shadow: 0 0 10px #35261a93;
+    box-shadow: 0 0 8px #35261a93;
 }
 
 .nb-button:disabled {
+    color: #303030;
     background-color: #c4c4c4;
     border: 2px solid #929292;
-    box-shadow: 0 0 20px #35261a93;
+    box-shadow: 0 0 8px #35261a93;
 }
 </style>
 
