@@ -65,7 +65,6 @@ export default {
 
     padding: 15px 5px 5px 5px;
     margin: 0px 50px 50px 50px;
-    width: auto;
 
     box-shadow: 0px 0px 15px 5px #35261a41;
 

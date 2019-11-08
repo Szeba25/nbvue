@@ -1,4 +1,37 @@
 {
     "title": "Első történet",
-    "description": "Történet<br>Több sorban!"
+    "description": [
+        {
+            "type": "p",
+            "data": "Történet<br>Több sorban!"
+        },
+        {
+            "type": "img",
+            "data": "Story_1.png"
+        },
+        {
+            "type": "img",
+            "data": "Story_2.JPG"
+        },
+        {
+            "type": "p",
+            "data": "Történet<br>Több sorban!"
+        },
+        {
+            "type": "img",
+            "data": "Story_1.png"
+        },
+        {
+            "type": "h3",
+            "data": "Alcím!"
+        },
+        {
+            "type": "p",
+            "data": "Történet<br>Több sorban!"
+        },
+        {
+            "type": "p",
+            "data": "Történet<br>Több sorban!"
+        }
+    ]
 }

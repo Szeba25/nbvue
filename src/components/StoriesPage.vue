@@ -52,11 +52,40 @@ export default {
 .stories-list {
     text-align: center;
     text-decoration: none;
+
+    border-style: solid;
+    border-color: #2e1808;
+    border-width: 0.5px;
+    border-radius: 8px;
+
+    padding: 10px 5px 10px 5px;
+    margin: 0px 200px 50px 200px;
+
+    box-shadow: 0px 0px 15px 5px #35261a41;
+    background-color: #f1d7c698;
+}
+
+@media only screen and (max-width: 1000px) {
+    .stories-list {
+        margin: 0px 100px 50px 100px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .stories-list {
+        margin: 0px 50px 50px 50px;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .stories-list {
+        margin: 0px 15px 50px 15px;
+    }
 }
 
 .story {
     font-size: 22px;
-    margin: 14px 0px;
+    margin: 15px 30px;
     transition: 0.3s;
     transition-timing-function: ease;
 }

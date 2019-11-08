@@ -210,12 +210,12 @@ export default {
 }
 
 .posts {
-    margin: 10px 160px 10px 160px;
+    margin: 10px 160px 30px 160px;
 }
 
 @media only screen and (max-width: 800px) {
     .posts {
-        margin: 10px;
+        margin: 10px 10px 20px 10px;
     }
 }
 

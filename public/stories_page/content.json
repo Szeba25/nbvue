@@ -2,5 +2,13 @@
     {
         "title": "Első történet",
         "page": "story1"
+    },
+    {
+        "title": "Első történet (teszt1)",
+        "page": "story1"
+    },
+    {
+        "title": "Első történet hosszabb címmel (teszt2)",
+        "page": "story1"
     }
 ]

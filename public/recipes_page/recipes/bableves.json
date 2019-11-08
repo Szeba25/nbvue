@@ -1,4 +1,37 @@
 {
     "title": "Bableves",
-    "description": "Megfőzzük és tálaljuk!"
+    "description": [
+        {
+            "type": "p",
+            "data": "Megfőzzük!"
+        },
+        {
+            "type": "img",
+            "data": "Recipe_1.png"
+        },
+        {
+            "type": "img",
+            "data": "Recipe_1.png"
+        },
+        {
+            "type": "p",
+            "data": "És"
+        },
+        {
+            "type": "img",
+            "data": "Recipe_2.png"
+        },
+        {
+            "type": "h3",
+            "data": "Alcím!"
+        },
+        {
+            "type": "p",
+            "data": "Tálaljuk!"
+        },
+        {
+            "type": "p",
+            "data": "The end!"
+        }
+    ]
 }
