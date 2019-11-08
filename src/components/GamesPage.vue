@@ -63,7 +63,7 @@ export default {
     border-width: 0.5px;
     border-radius: 8px;
 
-    padding: 15px 5px 5px 5px;
+    padding: 25px 5px 5px 5px;
     margin: 0px 50px 50px 50px;
 
     box-shadow: 0px 0px 15px 5px #35261a41;
@@ -146,6 +146,7 @@ export default {
     grid-template-columns: 220px 220px 220px;
     grid-gap: 10px;
     margin: auto;
+    padding: 10px 0px;
     text-align: center;
 }
 
