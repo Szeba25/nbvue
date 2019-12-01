@@ -267,6 +267,8 @@ a:visited {
     padding: 10px;
     border: 2px solid #ebccb7;
     border-radius: 8px;
+
+    box-shadow: 0px 0px 8px #35261a93;
 }
 
 .main-back:hover {

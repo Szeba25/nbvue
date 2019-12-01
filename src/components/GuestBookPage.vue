@@ -1,7 +1,7 @@
 <template>
     <div class="content-gb">
         <div class="new-post">
-            <h2 class="centered">Új bejegyzés</h2>
+            <h2 class="new-post-title centered">Új bejegyzés</h2>
             <p class="line-gb">Név <span class="error-message">* {{errors.nameError}}</span></p>
             <input class="input-gb" type="text" v-model="newPost.name">
             <p class="line-gb">E-mail</p>
@@ -201,6 +201,10 @@ export default {
 
 .new-post {
     margin: 10px 180px 10px 180px;
+}
+
+.new-post-title {
+    padding: 15px 0px 5px 0px;
 }
 
 @media only screen and (max-width: 800px) {
