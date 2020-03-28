@@ -259,21 +259,21 @@ a:visited {
 .main-back {
     cursor: pointer;
     text-align: center;
-    font-size: 28px;
+    font-size: 20px;
     margin: 25px auto 25px auto;
     transition: 0.3s;
     transition-timing-function: ease-out;
 
-    padding: 10px;
-    border: 2px solid #ebccb7;
+    padding: 8px;
+    border: 1px solid #2e1808; /* #ebccb7; */
     border-radius: 8px;
 
-    box-shadow: 0px 0px 8px #35261a93;
+    box-shadow: 0px 0px 4px #35261a93;
 }
 
 .main-back:hover {
     color: #d48545;
-    transform: translateY(3px);
+    transform: translateY(2px);
     transition: 0.3s;
     transition-timing-function: ease;
 }
