@@ -33,11 +33,22 @@
             </div>
             <router-view class="content"></router-view>
         </div>
+        <footer>
+            <cookie-law 
+                buttonText = "Rendben!" 
+                message="A weboldalon cookie-kat használunk az optimális működés érdekében. 🍪" 
+                theme="mytheme"
+            ></cookie-law>
+        </footer>
     </div>
 </template>
 
 <script>
+import CookieLaw from 'vue-cookie-law';
+
 export default {
+    components: { CookieLaw },
+
     name: 'App',
     
     watch:{
@@ -68,6 +79,36 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css?family=Caveat&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Courgette&display=swap');
+
+.Cookie--mytheme {
+    font-family: "Courgette";
+    background-color: rgb(231, 203, 175);
+    border-radius: 10px;
+    border: 1px solid #2e1808;
+    font-size: 18px;
+    padding: 10px;
+    color: #2e1808;
+}
+
+.Cookie--mytheme > div > .Cookie__button {
+    font-family: "Courgette";
+    font-size: 18px;
+    color: #2e1808;
+    width: 100px;
+    
+    padding: 8px 8px;
+    box-sizing: border-box;
+    border: 2px solid #ebccb7;
+    border-radius: 8px;
+    background-color: #f8f8f8;
+
+    transition: 0.3s;
+}
+
+.Cookie--mytheme > div > .Cookie__button:hover {
+    cursor: pointer;
+    border: 2px solid #d48545;
+}
 
 html {
     overflow-y: scroll;
