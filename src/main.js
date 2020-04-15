@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import App from './App.vue';
+import VueGtag from 'vue-gtag'
 import VueRouter from 'vue-router';
 
 import MainPage from './components/MainPage.vue';
@@ -13,8 +14,6 @@ import StoryPage from './components/StoryPage.vue';
 import RecipesPage from './components/RecipesPage.vue';
 import RecipePage from './components/RecipePage.vue';
 import GuestBookPage from './components/GuestBookPage.vue';
-
-Vue.use(VueRouter);
 
 Vue.config.productionTip = false;
 
@@ -32,6 +31,8 @@ const routes = [
     { path: '/guestbook', components: { default: GuestBookPage } }
 ];
 
+Vue.use(VueRouter);
+
 const router = new VueRouter({
     routes: routes,
 
@@ -40,6 +41,10 @@ const router = new VueRouter({
     }
 
 });
+
+Vue.use(VueGtag, {
+    config: { id: "UA-163730863-1"}
+}, router);
 
 new Vue({
     router,
