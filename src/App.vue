@@ -172,7 +172,7 @@ a:visited {
 }
 
 .menu-hr {
-    margin: 2px 10px 2px 20px;
+    margin: 2px 10px 2px 10px;
     border-color: #2e1808;
     border-width: 0.5px;
     box-shadow: 0px 0px 5px 1px #35261a57;
