@@ -2,7 +2,10 @@
     <div class="stories-content">
         <h2 class="stories-title centered">Történetek</h2>
         <div class="stories-list">
-            <router-link v-for="story in stories" v-bind:key="story.id" v-bind:to="'stories/' + story.page"><p class="story">{{story.title}}</p></router-link>
+            <router-link v-for="(story, index) in stories" v-bind:key="story.id" v-bind:to="'stories/' + story.page">
+                <p class="story">{{story.title}}</p>
+                <div v-if="index !== stories.length-1" class="spacing"></div>
+            </router-link>
         </div>
     </div>
 </template>
@@ -95,5 +98,11 @@ export default {
     transform: translateX(3px);
     transition: 0.3s;
     transition-timing-function: ease;
+}
+
+.spacing {
+    margin: 0px 15px;
+    background-color: #d48545;
+    height: 1px;
 }
 </style>

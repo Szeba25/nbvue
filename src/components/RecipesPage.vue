@@ -2,7 +2,10 @@
     <div class="recipes-content">
         <h2 class="recipes-title centered">Receptek</h2>
         <div class="recipes-list">
-            <router-link v-for="recipe in recipes" v-bind:key="recipe.id" v-bind:to="'recipes/' + recipe.page"><p class="recipe">{{recipe.title}}</p></router-link>
+            <router-link v-for="(recipe, index) in recipes" v-bind:key="recipe.id" v-bind:to="'recipes/' + recipe.page">
+                <p class="recipe">{{recipe.title}}</p>
+                <div v-if="index !== recipes.length-1" class="spacing"></div>
+            </router-link>
         </div>
     </div>
 </template>
@@ -95,5 +98,11 @@ export default {
     transform: translateX(3px);
     transition: 0.3s;
     transition-timing-function: ease;
+}
+
+.spacing {
+    margin: 0px 15px;
+    background-color: #d48545;
+    height: 1px;
 }
 </style>

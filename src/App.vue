@@ -153,13 +153,6 @@ p {
     margin: 5px 0px;
 }
 
-hr {
-    margin: 2px 20px 2px 20px;
-    border-color: #2e1808;
-    border-width: 0.5px;
-    box-shadow: 0px 0px 5px 1px #35261a57;
-}
-
 a {
     color: #d48545;
     text-decoration: none;
@@ -176,6 +169,13 @@ a:visited {
 
 .centered {
     text-align: center;
+}
+
+.menu-hr {
+    margin: 2px 10px 2px 20px;
+    border-color: #2e1808;
+    border-width: 0.5px;
+    box-shadow: 0px 0px 5px 1px #35261a57;
 }
 
 /* Faded icons */
@@ -336,6 +336,9 @@ a:visited {
 @media only screen and (max-width: 800px) {
     .main-layout {
         grid-template-rows: min-content min-content min-content min-content;
+        margin: 0px;
+        border-radius: 0px;
+        box-shadow: none;
     }
 }
 
