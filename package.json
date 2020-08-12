@@ -10,7 +10,7 @@
   "dependencies": {
     "axios": "^0.19.2",
     "core-js": "^2.6.11",
-    "serialize-javascript": "^3.0.0",
+    "serialize-javascript": "^3.1.0",
     "vue": "^2.6.11",
     "vue-cookie-law": "^1.13.3",
     "vue-gtag": "^1.6.2",
